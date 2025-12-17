@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://jipeso.github.io/portfolio",
+  "homepage": "https://jipeso.github.io",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
