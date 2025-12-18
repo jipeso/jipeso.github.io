@@ -9,8 +9,8 @@ import {
   Button,
 } from '@mui/material';
 
-import { projectData } from '../data/projects.tsx';
-import type { ProjectWithImage } from '../types';
+import { projectData } from '../data/projects';
+import { type Project } from '../types';
 
 const Projects = () => {
   return (
@@ -19,7 +19,7 @@ const Projects = () => {
         Projects
       </Typography>
       <Grid container spacing={4} sx={{ mt: 2 }}>
-        {(projectData as ProjectWithImage[]).map((project, index) => (
+        {(projectData as Project[]).map((project, index) => (
           <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
             <Card
               sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}

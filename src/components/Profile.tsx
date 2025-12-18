@@ -16,12 +16,15 @@ const Profile = () => {
           Joni Pesonen
         </Typography>
         <Typography variant="h5" align="center" color="text.secondary">
-          I'm an aspiring Full-Stack Developer and a Computer Science MSc
-          student. I enjoy building performant, maintainable and user-friendly
-          solutions to real-world problems.
+          Full Stack Developer & Computer Science MSc student in the University
+          of Helsinki
         </Typography>
         <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center', gap: 2 }}>
-          <Button variant="contained" startIcon={<GitHubIcon />}>
+          <Button
+            href="https://github.com/jipeso"
+            variant="contained"
+            startIcon={<GitHubIcon />}
+          >
             GitHub
           </Button>
           <Button variant="outlined" startIcon={<LinkedInIcon />}>
