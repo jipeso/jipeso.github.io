@@ -16,8 +16,7 @@ const Profile = () => {
           Joni Pesonen
         </Typography>
         <Typography variant="h5" align="center" color="text.secondary">
-          Full Stack Developer & Computer Science MSc student in the University
-          of Helsinki
+          Computer Science Master's Student
         </Typography>
         <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center', gap: 2 }}>
           <Button

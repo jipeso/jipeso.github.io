@@ -1,29 +1,99 @@
-import { type Skill, type Category } from '../types';
+import {
+  ReactOriginal,
+  PythonOriginal,
+  FlaskOriginal,
+  JavascriptOriginal,
+  TypescriptOriginal,
+  NodejsOriginal,
+  ExpressOriginal,
+  MongodbOriginal,
+  PostgresqlOriginal,
+  RedisOriginal,
+  DockerOriginal,
+  GithubOriginal,
+  GitOriginal,
+  Html5Original,
+  Css3Original,
+  UbuntuOriginal,
+  GraphqlPlain,
+  KubernetesOriginal,
+} from 'devicons-react';
+
+import type { Skill, Category } from '../types';
 
 export const categories: Category[] = [
   'Programming Languages',
-  'Frontend',
-  'Backend',
-  'Database',
+  'Frontend development',
+  'Backend development',
+  'Databases',
   'Other Tools',
 ];
 
-export const skills: Skill[] = [
-  { name: 'Python', category: 'Programming Languages', icon: 'python' },
-  { name: 'Flask', category: 'Backend', icon: 'flask' },
-  { name: 'JavaScript', category: 'Programming Languages', icon: 'javascript' },
-  { name: 'TypeScript', category: 'Programming Languages', icon: 'typescript' },
-  { name: 'React', category: 'Frontend', icon: 'react' },
-  { name: 'Express', category: 'Backend', icon: 'express' },
-  { name: 'Node.js', category: 'Backend', icon: 'nodejs' },
-  { name: 'MongoDB', category: 'Database', icon: 'mongodb' },
-  { name: 'PostgreSQL', category: 'Database', icon: 'postgresql' },
-  { name: 'Redis ', category: 'Database', icon: 'redis' },
-  { name: 'Docker', category: 'Other Tools', icon: 'docker' },
-  { name: 'OpenShift', category: 'Other Tools', icon: 'openshift' },
-  { name: 'GitHub', category: 'Other Tools', icon: 'github' },
-  { name: 'Git', category: 'Other Tools', icon: 'git' },
-  { name: 'HTML5', category: 'Frontend', icon: 'html5' },
-  { name: 'Ubuntu', category: 'Other Tools', icon: 'ubuntu' },
-  { name: 'GraphQL', category: 'Backend', icon: 'graphql' },
+export const skillData: Skill[] = [
+  {
+    name: 'Python',
+    category: 'Programming Languages',
+    IconComponent: PythonOriginal,
+  },
+  {
+    name: 'Flask',
+    category: 'Backend development',
+    IconComponent: FlaskOriginal,
+  },
+  {
+    name: 'JavaScript',
+    category: 'Programming Languages',
+    IconComponent: JavascriptOriginal,
+  },
+  {
+    name: 'TypeScript',
+    category: 'Programming Languages',
+    IconComponent: TypescriptOriginal,
+  },
+  {
+    name: 'React',
+    category: 'Frontend development',
+    IconComponent: ReactOriginal,
+  },
+  {
+    name: 'Express',
+    category: 'Backend development',
+    IconComponent: ExpressOriginal,
+  },
+  {
+    name: 'Node.js',
+    category: 'Backend development',
+    IconComponent: NodejsOriginal,
+  },
+  { name: 'MongoDB', category: 'Databases', IconComponent: MongodbOriginal },
+  {
+    name: 'PostgreSQL',
+    category: 'Databases',
+    IconComponent: PostgresqlOriginal,
+  },
+  { name: 'Redis ', category: 'Databases', IconComponent: RedisOriginal },
+  { name: 'Docker', category: 'Other Tools', IconComponent: DockerOriginal },
+  {
+    name: 'Kubernetes',
+    category: 'Other Tools',
+    IconComponent: KubernetesOriginal,
+  },
+  { name: 'GitHub', category: 'Other Tools', IconComponent: GithubOriginal },
+  { name: 'Git', category: 'Other Tools', IconComponent: GitOriginal },
+  {
+    name: 'HTML',
+    category: 'Frontend development',
+    IconComponent: Html5Original,
+  },
+  {
+    name: 'CSS',
+    category: 'Frontend development',
+    IconComponent: Css3Original,
+  },
+  { name: 'Ubuntu', category: 'Other Tools', IconComponent: UbuntuOriginal },
+  {
+    name: 'GraphQL',
+    category: 'Backend development',
+    IconComponent: GraphqlPlain,
+  },
 ];

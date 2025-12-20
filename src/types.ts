@@ -1,14 +1,16 @@
+import { type ElementType } from 'react';
+
 export type Category =
   | 'Programming Languages'
-  | 'Frontend'
-  | 'Backend'
-  | 'Database'
+  | 'Frontend development'
+  | 'Backend development'
+  | 'Databases'
   | 'Other Tools';
 
 export interface Skill {
   name: string;
   category: Category;
-  icon?: string;
+  IconComponent: ElementType;
 }
 
 export interface Project {
