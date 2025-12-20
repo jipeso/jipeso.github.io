@@ -15,7 +15,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const navItems = ['About', 'Projects'];
+  const navItems = ['About', 'Skills', 'Projects'];
 
   const toggleDrawer = () => {
     setMobileOpen(!mobileOpen);

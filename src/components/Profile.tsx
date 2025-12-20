@@ -4,7 +4,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Profile = () => {
   return (
-    <Box id="about" sx={{ pt: 8, pb: 6, backgroundColor: 'background.paper' }}>
+    <Box component="section" id="about" sx={{ py: 8 }}>
       <Container maxWidth="sm">
         <Typography
           component="h1"
@@ -14,9 +14,6 @@ const Profile = () => {
           gutterBottom
         >
           Joni Pesonen
-        </Typography>
-        <Typography variant="h5" align="center" color="text.secondary">
-          Computer Science Master's Student
         </Typography>
         <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center', gap: 2 }}>
           <Button

@@ -1,10 +1,11 @@
-import { CssBaseline, ThemeProvider } from '@mui/material';
+import { Stack, CssBaseline, ThemeProvider } from '@mui/material';
 
 import Navbar from './components/Navbar';
 import Profile from './components/Profile';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
+import About from './components/About';
 
 import theme from './theme';
 
@@ -13,11 +14,12 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Navbar />
-      <main>
+      <Stack component="main" spacing={0}>
         <Profile />
+        <About />
         <Skills />
         <Projects />
-      </main>
+      </Stack>
       <Footer />
     </ThemeProvider>
   );
