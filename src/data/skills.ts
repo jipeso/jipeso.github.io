@@ -20,6 +20,7 @@ import {
   ReduxOriginal,
   VitejsOriginal,
   TailwindcssOriginal,
+  GithubactionsOriginal,
 } from 'devicons-react';
 
 import type { Skill, Category } from '../types';
@@ -113,5 +114,10 @@ export const skillData: Skill[] = [
     name: 'Tailwind',
     category: 'Frontend development',
     IconComponent: TailwindcssOriginal,
+  },
+  {
+    name: 'GitHub Actions',
+    category: 'Other Tools',
+    IconComponent: GithubactionsOriginal,
   },
 ];
