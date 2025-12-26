@@ -9,24 +9,26 @@ const SkillItem = ({ skill }: SkillItemProps) => {
   const { name, IconComponent } = skill;
 
   return (
-    <Tooltip title={name} arrow>
+    <Tooltip title={name} arrow enterDelay={300} enterNextDelay={300}>
       <Paper
         elevation={0}
+        component="div"
         sx={{
           display: 'flex',
-          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
           width: 60,
           height: 60,
-          transition: 'transform 0.2s ease-in-out, box-shadow 0.2s',
-          '&:hover': {
-            transform: 'translateY(-3px)',
-            boxShadow: 2,
-          },
+          transition: 'all 0.3s',
+          bgcolor: '#ffffff',
+
           border: '1px solid',
           borderColor: 'divider',
-          borderRadius: 4,
+          borderRadius: 2,
+
+          '&:hover': {
+            transform: 'translateY(-4px)',
+          },
         }}
       >
         <IconComponent size={40} />

@@ -1,24 +1,39 @@
-import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 
-let theme = createTheme({
-  palette: {
-    primary: {
-      main: '#232323',
-    },
-    secondary: {
-      main: '#ff4081',
-    },
-    background: {
-      default: '#f4f6f8',
-    },
+export const theme = createTheme({
+  cssVariables: {
+    colorSchemeSelector: 'class',
   },
-  typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-    h1: { fontWeight: 700 },
-    h5: { fontWeight: 500 },
+  colorSchemes: {
+    light: {
+      palette: {
+        primary: {
+          main: '#5321faff',
+        },
+        background: {
+          default: '#F8FAFC',
+          paper: '#FFFFFF',
+        },
+        text: {
+          primary: '#0F172A',
+          secondary: '#475569',
+        },
+      },
+    },
+    dark: {
+      palette: {
+        primary: {
+          main: '#818CF8',
+        },
+        background: {
+          default: '#020617',
+          paper: '#0F172A',
+        },
+        text: {
+          primary: '#F8FAFC',
+          secondary: '#94A3B8',
+        },
+      },
+    },
   },
 });
-
-theme = responsiveFontSizes(theme);
-
-export default theme;

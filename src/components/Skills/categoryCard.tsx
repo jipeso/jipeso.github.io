@@ -12,8 +12,8 @@ const CategoryCard = ({ title, skills }: CategoryCardProps) => {
     <Box
       sx={{
         p: 2,
-        borderRadius: 4,
         border: '1px solid',
+        borderRadius: 2,
         borderColor: 'divider',
         backgroundColor: 'background.paper',
         height: '100%',

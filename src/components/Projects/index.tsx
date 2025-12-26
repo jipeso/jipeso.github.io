@@ -12,7 +12,7 @@ const Projects = () => {
 
         <Grid container spacing={4}>
           {projectData.map((project, index) => (
-            <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
+            <Grid key={index} size={{ xs: 12, sm: 12, md: 12 }}>
               <ProjectCard project={project} />
             </Grid>
           ))}

@@ -17,17 +17,17 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     <Card
       elevation={0}
       sx={{
+        p: 2,
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        transition: 'transform 0.2s ease-in-out, box-shadow 0.2s',
+        transition: 'all 0.3s',
         '&:hover': {
-          transform: 'translateY(-3px)',
-          boxShadow: 2,
+          transform: 'translateY(-4px)',
         },
-        border: '1px solid',
+        border: '2px solid',
         borderColor: 'divider',
-        borderRadius: 4,
+        borderRadius: 2,
       }}
     >
       <CardMedia
@@ -35,12 +35,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         image={project.image}
         alt={project.title}
         sx={{
-          height: 200,
-          objectFit: 'cover',
+          objectFit: 'contain',
         }}
       />
       <CardContent sx={{ flexGrow: 1, p: 3 }}>
-        <Typography gutterBottom variant="h5">
+        <Typography gutterBottom variant="h5" color="text.primary">
           {project.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">

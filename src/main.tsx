@@ -1,4 +1,11 @@
 import { createRoot } from 'react-dom/client';
+import { ThemeProvider } from '@mui/material';
 import App from './App.tsx';
 
-createRoot(document.getElementById('root')!).render(<App />);
+import { theme } from './theme.ts';
+
+createRoot(document.getElementById('root')!).render(
+  <ThemeProvider theme={theme}>
+    <App />
+  </ThemeProvider>
+);

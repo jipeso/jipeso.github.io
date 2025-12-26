@@ -2,12 +2,20 @@ import { Box, Typography } from '@mui/material';
 
 const Footer = () => {
   return (
-    <Box component="footer" sx={{ bgcolor: 'primary.main', p: 6 }}>
+    <Box
+      component="footer"
+      sx={{
+        p: 6,
+        bgcolor: 'background.paper',
+        borderTop: '1px solid',
+        borderColor: 'divider',
+      }}
+    >
       <Typography
         variant="subtitle1"
         align="center"
-        color="grey.400"
         component="p"
+        color="text.secondary"
       >
         Made with React + Vite, hosted on GitHub
       </Typography>
