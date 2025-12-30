@@ -1,6 +1,6 @@
 import { Container, Typography, Box, Grid } from '@mui/material';
 import { skillData, categories } from '../../data/skills';
-import CategoryCard from './categoryCard';
+import CategoryCard from './CategoryCard';
 
 const Skills = () => {
   return (
