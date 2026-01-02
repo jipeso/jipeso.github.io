@@ -1,5 +1,6 @@
 import { Box, Container, Typography } from '@mui/material';
 import Highlight from './Highlight';
+import SectionHeader from '../SectionHeader';
 
 const About = () => {
   return (
@@ -11,9 +12,7 @@ const About = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Typography variant="h2" gutterBottom>
-          About Me
-        </Typography>
+        <SectionHeader overline="Introduction" title="About Me" />
         <Typography
           variant="body1"
           sx={{

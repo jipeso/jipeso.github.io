@@ -1,23 +1,12 @@
 import { Box, Typography } from '@mui/material';
 
+const currentYear = new Date().getFullYear();
+
 const Footer = () => {
   return (
-    <Box
-      component="footer"
-      sx={{
-        p: 6,
-        bgcolor: 'background.paper',
-        borderTop: '1px solid',
-        borderColor: 'divider',
-      }}
-    >
-      <Typography
-        variant="subtitle1"
-        align="center"
-        component="p"
-        color="text.secondary"
-      >
-        Made with React + Vite, hosted on GitHub
+    <Box component="footer" sx={{ py: 8 }}>
+      <Typography variant="subtitle1" align="center" color="text.secondary">
+        © {currentYear} Joni Pesonen. Made with React + Vite.
       </Typography>
     </Box>
   );

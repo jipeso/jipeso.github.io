@@ -11,7 +11,7 @@ const CategoryCard = ({ title, skills }: CategoryCardProps) => {
   return (
     <Box
       sx={{
-        p: 2,
+        p: 1.5,
         border: '1px solid',
         borderRadius: 2,
         borderColor: 'divider',
@@ -19,7 +19,7 @@ const CategoryCard = ({ title, skills }: CategoryCardProps) => {
         height: '100%',
       }}
     >
-      <Typography variant="h6" component="h3" sx={{ mb: 1 }}>
+      <Typography variant="h3" gutterBottom>
         {title}
       </Typography>
 

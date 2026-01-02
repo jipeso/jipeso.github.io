@@ -21,11 +21,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        transition: 'all 0.3s',
-        '&:hover': {
-          transform: 'translateY(-4px)',
-        },
-        border: '2px solid',
+        border: '1px solid',
         borderColor: 'divider',
         borderRadius: 2,
       }}
@@ -35,11 +31,16 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         image={project.image}
         alt={project.title}
         sx={{
+          width: '100%',
+          aspectRatio: '16 / 9',
+          objectFit: 'cover',
           borderRadius: 2,
+          border: '1px solid',
+          borderColor: 'divider',
         }}
       />
       <CardContent sx={{ flexGrow: 1, p: 3 }}>
-        <Typography gutterBottom variant="h5" color="text.primary">
+        <Typography variant="h3" gutterBottom>
           {project.title}
         </Typography>
         <Typography variant="body1" color="text.secondary">

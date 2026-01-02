@@ -12,7 +12,7 @@ export const theme = createTheme({
           main: '#5321faff',
         },
         background: {
-          default: '#F8FAFC',
+          default: '#F1F5F9',
           paper: '#FFFFFF',
         },
         text: {
@@ -42,7 +42,10 @@ export const theme = createTheme({
       fontSize: '4rem',
     },
     h2: {
-      fontSize: '3rem',
+      fontSize: '2.5rem',
+    },
+    h3: {
+      fontSize: '1.5rem',
     },
   },
 });

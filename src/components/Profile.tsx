@@ -9,12 +9,12 @@ const Profile = () => {
         <Typography
           variant="h1"
           align="center"
-          color="text.primary"
+          sx={{ fontWeight: 400 }}
           gutterBottom
         >
           Joni Pesonen
         </Typography>
-        <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center', gap: 2 }}>
+        <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center', gap: 2 }}>
           <Button
             href="https://github.com/jipeso"
             variant="contained"

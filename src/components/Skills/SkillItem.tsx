@@ -19,16 +19,11 @@ const SkillItem = ({ skill }: SkillItemProps) => {
           justifyContent: 'center',
           width: 60,
           height: 60,
-          transition: 'all 0.3s',
-          bgcolor: '#ffffff',
+          bgcolor: '#FFFFFF',
 
           border: '1px solid',
           borderColor: 'divider',
           borderRadius: 2,
-
-          '&:hover': {
-            transform: 'translateY(-4px)',
-          },
         }}
       >
         <IconComponent size={40} />
