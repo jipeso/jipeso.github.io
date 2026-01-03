@@ -18,3 +18,9 @@ export interface Project {
   link: string;
   image: string;
 }
+export interface SocialsLink {
+  title: string;
+  link: string;
+  icon: ElementType;
+  label: string;
+}

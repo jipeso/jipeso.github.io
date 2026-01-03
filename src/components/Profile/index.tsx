@@ -1,6 +1,6 @@
 import { Box, Container, Stack, Typography } from '@mui/material';
 import LocationPinIcon from '@mui/icons-material/LocationPin';
-import SocialActions from './Socials';
+import SocialLinks from './SocialLinks';
 
 const Profile = () => {
   return (
@@ -23,7 +23,7 @@ const Profile = () => {
             <Typography variant="body1">Helsinki, Finland</Typography>
           </Stack>
         </Stack>
-        <SocialActions />
+        <SocialLinks />
       </Container>
     </Box>
   );
