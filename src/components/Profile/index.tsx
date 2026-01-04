@@ -13,6 +13,7 @@ const Profile = () => {
         <Stack
           direction={{ xs: 'column', sm: 'row' }}
           spacing={{ xs: 4, sm: 12 }}
+          alignItems="center"
         >
           <Stack spacing={1}>
             <Typography variant="h1">Joni Pesonen</Typography>
