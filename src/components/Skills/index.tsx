@@ -14,7 +14,7 @@ const Skills = () => {
         <SectionHeader overline="Technical Stack" title="Skills" />
         <Grid container spacing={3}>
           {categories.map((category) => (
-            <Grid size={{ xs: 12, sm: 6, md: 6 }} key={category}>
+            <Grid size={{ xs: 12, sm: 6 }} key={category}>
               <CategoryCard
                 title={category}
                 skills={skillData.filter(

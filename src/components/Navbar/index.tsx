@@ -49,7 +49,7 @@ const Navbar = () => {
             edge="start"
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'none' }, color: 'text.primary' }}
-            aria-label="open naviagtion menu"
+            aria-label="open navigation menu"
           >
             <MenuIcon />
           </IconButton>
