@@ -9,7 +9,7 @@ const Skills = () => {
   );
 
   return (
-    <Box component="section" id="skills">
+    <Box component="section" id="skills" sx={{ scrollMarginTop: '80px' }}>
       <Container maxWidth="md">
         <SectionHeader overline="Technical Stack" title="Skills" />
         <Grid container spacing={3}>

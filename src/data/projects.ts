@@ -13,17 +13,17 @@ export const projectData: Project[] = [
     image: infoScreenImage,
   },
   {
-    title: 'BibTeX reference manager',
-    description:
-      'Application for creating and managing BibTeX references for academic writing',
-    link: 'https://github.com/ruokokoski/ohtu-miniprojekti',
-    image: bibtexProjectImage,
-  },
-  {
     title: 'News article manager',
     description:
       'Application for saving and managing news articles from RSS feeds',
     link: 'https://github.com/jipeso/ohjelmistotekniikka',
     image: newsArticlesImage,
+  },
+  {
+    title: 'BibTeX reference manager',
+    description:
+      'Application for creating and managing BibTeX references for academic writing',
+    link: 'https://github.com/ruokokoski/ohtu-miniprojekti',
+    image: bibtexProjectImage,
   },
 ];

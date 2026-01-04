@@ -5,7 +5,7 @@ import SectionHeader from '../SectionHeader';
 
 const Projects = () => {
   return (
-    <Box component="section" id="projects">
+    <Box component="section" id="projects" sx={{ scrollMarginTop: '80px' }}>
       <Container maxWidth="md">
         <SectionHeader overline="My Work" title="Featured Projects" />
         <Grid container spacing={4}>

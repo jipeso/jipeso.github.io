@@ -8,7 +8,7 @@ import profileImg from '../../assets/profile-image.webp';
 
 const Profile = () => {
   return (
-    <Box component="section" id="about">
+    <Box component="section" id="profile">
       <Container maxWidth="md">
         <Stack
           direction={{ xs: 'column', sm: 'row' }}

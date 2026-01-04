@@ -4,7 +4,7 @@ import SectionHeader from '../SectionHeader';
 
 const About = () => {
   return (
-    <Box component="section" id="about">
+    <Box component="section" id="about" sx={{ scrollMarginTop: '80px' }}>
       <Container maxWidth="md">
         <SectionHeader overline="Introduction" title="About Me" />
         <Typography

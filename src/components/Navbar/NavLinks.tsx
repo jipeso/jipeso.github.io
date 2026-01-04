@@ -11,7 +11,7 @@ const NavLinks = ({ onItemClick, isMobile = false }: NavLinkProps) => (
   <>
     {NAV_ITEMS.map((item) =>
       isMobile ? (
-        <ListItem key={item} disablePadding>
+        <ListItem key={item}>
           <ListItemButton onClick={() => onItemClick(item)}>
             <ListItemText primary={item} sx={{ textTransform: 'capitalize' }} />
           </ListItemButton>
