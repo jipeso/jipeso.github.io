@@ -21,8 +21,8 @@ const Profile = () => {
             }}
           >
             <Typography variant="h1">Joni Pesonen</Typography>
-            <Typography color="primary.main">
-              CS Student & Software Developer
+            <Typography color="text.secondary">
+              CS Student & Software Engineer
             </Typography>
 
             <Stack
@@ -44,8 +44,8 @@ const Profile = () => {
             sx={{
               width: 180,
               height: 180,
-              border: '3px solid',
-              borderColor: 'primary.main',
+              border: '1px solid',
+              borderColor: 'text.secondary',
               order: { xs: 1, sm: 2 },
             }}
           />

@@ -11,7 +11,7 @@ const SkillItem = ({ skill }: SkillItemProps) => {
   return (
     <Tooltip title={name} arrow enterDelay={300} enterNextDelay={300}>
       <Paper
-        elevation={4}
+        variant="outlined"
         component="div"
         role="img"
         aria-label={name}
@@ -19,12 +19,18 @@ const SkillItem = ({ skill }: SkillItemProps) => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          width: 60,
-          height: 60,
+          width: 50,
+          height: 50,
           borderRadius: 2,
+          backgroundColor: 'action.hover',
+          transition: 'transform 0.2s, background-color 0.2s',
+          '&:hover': {
+            transform: 'translateY(-2px)',
+            backgroundColor: 'action.selected',
+          },
         }}
       >
-        <IconComponent size={45} />
+        <IconComponent size={32} />
       </Paper>
     </Tooltip>
   );

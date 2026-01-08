@@ -17,7 +17,11 @@ export const theme = createTheme({
         },
         text: {
           primary: '#0F172A',
-          secondary: '#475569',
+          secondary: '#64748B',
+        },
+        action: {
+          hover: 'rgba(99, 102, 241, 0.04)',
+          selected: 'rgba(99, 102, 241, 0.08)',
         },
       },
     },
@@ -33,6 +37,10 @@ export const theme = createTheme({
         text: {
           primary: '#F8FAFC',
           secondary: '#94A3B8',
+        },
+        action: {
+          hover: 'rgba(255, 255, 255, 0.08)',
+          selected: 'rgba(255, 255, 255, 0.16)',
         },
       },
     },
