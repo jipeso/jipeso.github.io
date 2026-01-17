@@ -20,6 +20,7 @@ import ReduxOriginal from 'devicons-react/icons/ReduxOriginal';
 import VitejsOriginal from 'devicons-react/icons/VitejsOriginal';
 import TailwindcssOriginal from 'devicons-react/icons/TailwindcssOriginal';
 import GithubactionsOriginal from 'devicons-react/icons/GithubactionsOriginal';
+import PlaywrightOriginal from 'devicons-react/icons/PlaywrightOriginal';
 
 import { type Skill } from '../types';
 
@@ -109,7 +110,7 @@ export const skillData: Skill[] = [
   },
   {
     name: 'Vite',
-    category: 'Frameworks & Libraries',
+    category: 'Tools & Platforms',
     IconComponent: VitejsOriginal,
   },
   {
@@ -121,5 +122,10 @@ export const skillData: Skill[] = [
     name: 'GitHub Actions',
     category: 'Tools & Platforms',
     IconComponent: GithubactionsOriginal,
+  },
+  {
+    name: 'Playwright',
+    category: 'Frameworks & Libraries',
+    IconComponent: PlaywrightOriginal,
   },
 ];
