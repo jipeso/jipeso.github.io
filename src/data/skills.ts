@@ -14,13 +14,15 @@ import GitOriginal from 'devicons-react/icons/GitOriginal';
 import Html5Original from 'devicons-react/icons/Html5Original';
 import Css3Original from 'devicons-react/icons/Css3Original';
 import UbuntuOriginal from 'devicons-react/icons/UbuntuOriginal';
-import GraphqlPlain from 'devicons-react/icons/GraphqlPlain';
 import KubernetesOriginal from 'devicons-react/icons/KubernetesOriginal';
 import ReduxOriginal from 'devicons-react/icons/ReduxOriginal';
 import VitejsOriginal from 'devicons-react/icons/VitejsOriginal';
 import TailwindcssOriginal from 'devicons-react/icons/TailwindcssOriginal';
 import GithubactionsOriginal from 'devicons-react/icons/GithubactionsOriginal';
 import PlaywrightOriginal from 'devicons-react/icons/PlaywrightOriginal';
+import ApollographqlOriginal from 'devicons-react/icons/ApollographqlOriginal';
+import PoetryOriginal from 'devicons-react/icons/PoetryOriginal';
+import MaterialuiOriginal from 'devicons-react/icons/MaterialuiOriginal';
 
 import { type Skill } from '../types';
 
@@ -57,7 +59,7 @@ export const skillData: Skill[] = [
   },
   {
     name: 'Node.js',
-    category: 'Frameworks & Libraries',
+    category: 'Tools & Platforms',
     IconComponent: NodejsOriginal,
   },
   { name: 'MongoDB', category: 'Databases', IconComponent: MongodbOriginal },
@@ -99,9 +101,9 @@ export const skillData: Skill[] = [
     IconComponent: UbuntuOriginal,
   },
   {
-    name: 'GraphQL',
+    name: 'Apollo GraphQL',
     category: 'Frameworks & Libraries',
-    IconComponent: GraphqlPlain,
+    IconComponent: ApollographqlOriginal,
   },
   {
     name: 'Redux',
@@ -127,5 +129,15 @@ export const skillData: Skill[] = [
     name: 'Playwright',
     category: 'Frameworks & Libraries',
     IconComponent: PlaywrightOriginal,
+  },
+  {
+    name: 'Poetry',
+    category: 'Tools & Platforms',
+    IconComponent: PoetryOriginal,
+  },
+  {
+    name: 'Material UI',
+    category: 'Frameworks & Libraries',
+    IconComponent: MaterialuiOriginal,
   },
 ];
