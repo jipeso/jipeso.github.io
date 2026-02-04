@@ -1,13 +1,13 @@
-import { Box } from '@mui/material';
+import { Typography } from '@mui/material';
 
 interface HighlightProps {
   children: React.ReactNode;
 }
 
 const Highlight = ({ children }: HighlightProps) => (
-  <Box component="span" sx={{ color: 'primary.main' }}>
+  <Typography component="span" sx={{ color: 'primary.main' }}>
     {children}
-  </Box>
+  </Typography>
 );
 
 export default Highlight;

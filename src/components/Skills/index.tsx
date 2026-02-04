@@ -1,7 +1,6 @@
-import { Container, Box, Grid } from '@mui/material';
+import { Container, Box, Grid, Typography } from '@mui/material';
 import { skillData } from '../../data/skills';
 import CategoryCard from './CategoryCard';
-import SectionHeader from '../SectionHeader';
 
 const Skills = () => {
   const categories = Array.from(
@@ -11,7 +10,9 @@ const Skills = () => {
   return (
     <Box component="section" id="skills" sx={{ scrollMarginTop: '60px' }}>
       <Container maxWidth="md">
-        <SectionHeader overline="Technical Stack" title="Skills" />
+        <Typography variant="h2" sx={{ mb: 2 }}>
+          Skills
+        </Typography>
         <Grid container spacing={3}>
           {categories.map((category) => (
             <Grid size={{ xs: 12, sm: 6 }} key={category}>

@@ -8,7 +8,7 @@ export const projectData: Project[] = [
   {
     title: 'Infoscreen',
     description:
-      "Info screen application for the University of Helsinki's Exactum building, featuring an interactive floor plan with real-time room availability, a pdf bulletin board, and campus restaurant menus",
+      "Application for the University of Helsinki's Exactum building, featuring an interactive floor plan with real-time room availability, a pdf bulletin board, and campus restaurant menus",
     link: 'https://github.com/Infopisteprojekti/infopiste',
     image: infoScreenImage,
   },

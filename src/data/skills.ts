@@ -23,6 +23,9 @@ import PlaywrightOriginal from 'devicons-react/icons/PlaywrightOriginal';
 import ApollographqlOriginal from 'devicons-react/icons/ApollographqlOriginal';
 import PoetryOriginal from 'devicons-react/icons/PoetryOriginal';
 import MaterialuiOriginal from 'devicons-react/icons/MaterialuiOriginal';
+import ReactnativeOriginal from 'devicons-react/icons/ReactnativeOriginal';
+import ExpoOriginal from 'devicons-react/icons/ExpoOriginal';
+import SqliteOriginal from 'devicons-react/icons/SqliteOriginal';
 
 import { type Skill } from '../types';
 
@@ -139,5 +142,20 @@ export const skillData: Skill[] = [
     name: 'Material UI',
     category: 'Frameworks & Libraries',
     IconComponent: MaterialuiOriginal,
+  },
+  {
+    name: 'React Native',
+    category: 'Frameworks & Libraries',
+    IconComponent: ReactnativeOriginal,
+  },
+  {
+    name: 'Expo',
+    category: 'Tools & Platforms',
+    IconComponent: ExpoOriginal,
+  },
+  {
+    name: 'SQLite',
+    category: 'Databases',
+    IconComponent: SqliteOriginal,
   },
 ];
