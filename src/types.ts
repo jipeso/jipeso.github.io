@@ -2,9 +2,11 @@ import { type ElementType } from 'react';
 
 export type Category =
   | 'Languages'
-  | 'Frameworks & Libraries'
+  | 'Frameworks & UI'
   | 'Databases'
-  | 'Tools & Platforms';
+  | 'DevOps & Infrastructure'
+  | 'Developer Tools'
+  | 'Testing & Automation';
 
 export interface Skill {
   name: string;
@@ -14,9 +16,11 @@ export interface Skill {
 
 export interface Project {
   title: string;
+  company?: string;
   description: string;
-  link: string;
-  image: string;
+  link?: string;
+  image?: string;
+  skills?: string[];
 }
 export interface SocialsLink {
   title: string;

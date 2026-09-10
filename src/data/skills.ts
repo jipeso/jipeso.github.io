@@ -28,6 +28,16 @@ import ExpoOriginal from 'devicons-react/icons/ExpoOriginal';
 import SqliteOriginal from 'devicons-react/icons/SqliteOriginal';
 
 import { type Skill } from '../types';
+import {
+  AzureOriginal,
+  EslintOriginal,
+  NginxOriginal,
+  PostmanOriginal,
+  PytestOriginal,
+  SequelizeOriginal,
+  VitestOriginal,
+  VscodeOriginal,
+} from 'devicons-react';
 
 export const skillData: Skill[] = [
   {
@@ -37,7 +47,7 @@ export const skillData: Skill[] = [
   },
   {
     name: 'Flask',
-    category: 'Frameworks & Libraries',
+    category: 'Frameworks & UI',
     IconComponent: FlaskOriginal,
   },
   {
@@ -52,17 +62,17 @@ export const skillData: Skill[] = [
   },
   {
     name: 'React',
-    category: 'Frameworks & Libraries',
+    category: 'Frameworks & UI',
     IconComponent: ReactOriginal,
   },
   {
     name: 'Express',
-    category: 'Frameworks & Libraries',
+    category: 'Frameworks & UI',
     IconComponent: ExpressOriginal,
   },
   {
     name: 'Node.js',
-    category: 'Tools & Platforms',
+    category: 'Developer Tools',
     IconComponent: NodejsOriginal,
   },
   { name: 'MongoDB', category: 'Databases', IconComponent: MongodbOriginal },
@@ -71,23 +81,23 @@ export const skillData: Skill[] = [
     category: 'Databases',
     IconComponent: PostgresqlOriginal,
   },
-  { name: 'Redis ', category: 'Databases', IconComponent: RedisOriginal },
+  { name: 'Redis', category: 'Databases', IconComponent: RedisOriginal },
   {
     name: 'Docker',
-    category: 'Tools & Platforms',
+    category: 'DevOps & Infrastructure',
     IconComponent: DockerOriginal,
   },
   {
     name: 'Kubernetes',
-    category: 'Tools & Platforms',
+    category: 'DevOps & Infrastructure',
     IconComponent: KubernetesOriginal,
   },
   {
     name: 'GitHub',
-    category: 'Tools & Platforms',
+    category: 'Developer Tools',
     IconComponent: GithubOriginal,
   },
-  { name: 'Git', category: 'Tools & Platforms', IconComponent: GitOriginal },
+  { name: 'Git', category: 'Developer Tools', IconComponent: GitOriginal },
   {
     name: 'HTML',
     category: 'Languages',
@@ -100,62 +110,102 @@ export const skillData: Skill[] = [
   },
   {
     name: 'Ubuntu',
-    category: 'Tools & Platforms',
+    category: 'DevOps & Infrastructure',
     IconComponent: UbuntuOriginal,
   },
   {
     name: 'Apollo GraphQL',
-    category: 'Frameworks & Libraries',
+    category: 'Frameworks & UI',
     IconComponent: ApollographqlOriginal,
   },
   {
     name: 'Redux',
-    category: 'Frameworks & Libraries',
+    category: 'Frameworks & UI',
     IconComponent: ReduxOriginal,
   },
   {
     name: 'Vite',
-    category: 'Tools & Platforms',
+    category: 'Developer Tools',
     IconComponent: VitejsOriginal,
   },
   {
     name: 'Tailwind',
-    category: 'Frameworks & Libraries',
+    category: 'Frameworks & UI',
     IconComponent: TailwindcssOriginal,
   },
   {
     name: 'GitHub Actions',
-    category: 'Tools & Platforms',
+    category: 'DevOps & Infrastructure',
     IconComponent: GithubactionsOriginal,
   },
   {
     name: 'Playwright',
-    category: 'Frameworks & Libraries',
+    category: 'Testing & Automation',
     IconComponent: PlaywrightOriginal,
   },
   {
+    name: 'Pytest',
+    category: 'Testing & Automation',
+    IconComponent: PytestOriginal,
+  },
+  {
     name: 'Poetry',
-    category: 'Tools & Platforms',
+    category: 'Developer Tools',
     IconComponent: PoetryOriginal,
   },
   {
     name: 'Material UI',
-    category: 'Frameworks & Libraries',
+    category: 'Frameworks & UI',
     IconComponent: MaterialuiOriginal,
   },
   {
     name: 'React Native',
-    category: 'Frameworks & Libraries',
+    category: 'Frameworks & UI',
     IconComponent: ReactnativeOriginal,
   },
   {
     name: 'Expo',
-    category: 'Tools & Platforms',
+    category: 'Developer Tools',
     IconComponent: ExpoOriginal,
   },
   {
     name: 'SQLite',
     category: 'Databases',
     IconComponent: SqliteOriginal,
+  },
+  {
+    name: 'Postman',
+    category: 'Developer Tools',
+    IconComponent: PostmanOriginal,
+  },
+  {
+    name: 'NGINX',
+    category: 'DevOps & Infrastructure',
+    IconComponent: NginxOriginal,
+  },
+  {
+    name: 'Azure',
+    category: 'DevOps & Infrastructure',
+    IconComponent: AzureOriginal,
+  },
+  {
+    name: 'Eslint',
+    category: 'Developer Tools',
+    IconComponent: EslintOriginal,
+  },
+  {
+    name: 'Sequelize',
+    category: 'Frameworks & UI',
+    IconComponent: SequelizeOriginal,
+  },
+  {
+    name: 'Vitest',
+    category: 'Testing & Automation',
+    IconComponent: VitestOriginal,
+  },
+  {
+    name: 'VS Code',
+    category: 'Developer Tools',
+    IconComponent: VscodeOriginal,
   },
 ];

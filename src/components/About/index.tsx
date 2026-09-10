@@ -23,6 +23,11 @@ const About = () => {
           systems, and making clear design decisions. I'm particularly
           interested in <Highlight>full-stack development</Highlight>, system
           design, and learning through practical projects and collaboration.
+          <br />
+          <br />
+          I'm currently looking for{' '}
+          <Highlight>internship and junior developer</Highlight> opportunities,
+          and I'm happy to work in Finnish or English.
         </Typography>
       </Container>
     </Box>

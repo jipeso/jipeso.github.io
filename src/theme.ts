@@ -9,64 +9,52 @@ export const theme = createTheme({
     light: {
       palette: {
         primary: {
-          main: '#6366F1',
+          main: '#B8862E',
         },
         background: {
-          default: '#F8FAFC',
+          default: '#FAF8F4',
           paper: '#FFFFFF',
         },
         text: {
-          primary: '#0F172A',
-          secondary: '#64748B',
+          primary: '#1C1917',
+          secondary: '#78716C',
         },
         action: {
-          hover: 'rgba(99, 102, 241, 0.04)',
-          selected: 'rgba(99, 102, 241, 0.08)',
+          hover: 'rgba(184, 134, 46, 0.05)',
+          selected: 'rgba(184, 134, 46, 0.1)',
         },
       },
     },
     dark: {
       palette: {
         primary: {
-          main: '#A5B4FC',
+          main: '#D4A857',
+        },
+        secondary: {
+          main: '#7C9885',
         },
         background: {
-          default: '#020617',
-          paper: '#0F172A',
+          default: '#0D0E12',
+          paper: '#16181D',
         },
         text: {
-          primary: '#F8FAFC',
-          secondary: '#94A3B8',
+          primary: '#F2F0EB',
+          secondary: '#9B9791',
         },
         action: {
-          hover: 'rgba(255, 255, 255, 0.08)',
-          selected: 'rgba(255, 255, 255, 0.16)',
+          hover: 'rgba(212, 168, 87, 0.08)',
+          selected: 'rgba(212, 168, 87, 0.16)',
         },
+        divider: 'rgba(242, 240, 235, 0.08)',
       },
     },
   },
   typography: {
-    h1: {
-      fontSize: '2.4rem',
-      fontWeight: 700,
-    },
-    h2: {
-      fontSize: '1.7rem',
-      fontWeight: 650,
-    },
-    h3: {
-      fontSize: '1.2rem',
-      fontWeight: 600,
-    },
-    subtitle1: {
-      fontSize: '1.1rem',
-      fontWeight: 600,
-    },
-    overline: {
-      fontWeight: 700,
-    },
-    body2: {
-      fontWeight: 500,
-    },
+    h1: { fontSize: '2.4rem', fontWeight: 700 },
+    h2: { fontSize: '1.7rem', fontWeight: 650 },
+    h3: { fontSize: '1.2rem', fontWeight: 600 },
+    subtitle1: { fontSize: '1.1rem', fontWeight: 600 },
+    overline: { fontWeight: 700 },
+    body2: { fontWeight: 500 },
   },
 });

@@ -22,11 +22,13 @@ const SkillItem = ({ skill }: SkillItemProps) => {
           width: 50,
           height: 50,
           borderRadius: 2,
-          backgroundColor: 'action.hover',
+          backgroundColor: '#fff',
+          color: 'text.primary',
+          boxShadow: '0 1px 3px rgba(0, 0, 0, 0.15)',
           transition: 'transform 0.2s, background-color 0.2s',
           '&:hover': {
             transform: 'translateY(-2px)',
-            backgroundColor: 'action.selected',
+            backgroundColor: '#f8f8f8',
           },
         }}
       >
