@@ -17,3 +17,5 @@ export const socialsData: SocialsLink[] = [
     label: 'Link to LinkedIn Profile',
   },
 ]
+
+export const email = 'jipesonen@gmail.com'

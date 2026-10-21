@@ -21,9 +21,7 @@ const Profile = () => {
             }}
           >
             <Typography variant='h1'>Joni Pesonen</Typography>
-            <Typography color='text.secondary'>
-              CS Student & Software Engineer
-            </Typography>
+            <Typography color='text.secondary'>Full-stack developer</Typography>
 
             <Stack
               direction='row'
