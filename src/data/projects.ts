@@ -11,7 +11,12 @@ export const projectData: Project[] = [
     title: 'Duunit',
     company: 'University project',
     description:
-      'Duunit is a personal job application tracker. Users can create and manage job applications and track their progress. The application also provides a dashboard for visualizing application statistics and an AI job description analysis tool.',
+      'Job application tracker with a statistics dashboard and AI-powered job description analysis.',
+    highlights: [
+      'Designed and developed solo for Full Stack -web development project',
+      'AI job description analysis using the OpenRouter API',
+      'Automated release pipeline with end-to-end tests',
+    ],
     link: 'https://github.com/jipeso/duunit',
     image: duunitImage,
     production: 'https://duunit.site',
@@ -33,7 +38,11 @@ export const projectData: Project[] = [
     title: 'IT-Arkkitehtuuri',
     company: '2M-IT Oy',
     description:
-      'Specialized tool designed for viewing and managing IT architecture data synchronized from ServiceNow. It provides capabilities for data exploration via interactive grids, report generation, and automated relationship visualization through a dynamic diagram builder',
+      'Tool for viewing and managing IT architecture data synchronized from ServiceNow.',
+    highlights: [
+      'Designed and developed solo',
+      'Interactive data grids, report generation and a diagram builder that visualizes relationships automatically',
+    ],
     image: itArkkitehtuuriImage,
     skills: [
       'TypeScript',
@@ -54,7 +63,11 @@ export const projectData: Project[] = [
     title: 'Infoscreen',
     company: 'University of Helsinki',
     description:
-      "Application for the University of Helsinki's Exactum building, featuring an interactive floor plan with real-time room availability, a pdf bulletin board, and campus restaurant menus",
+      "Info screen for the University of Helsinki's Exactum building with an interactive floor plan, real-time room availability, a PDF bulletin board and campus restaurant menus.",
+    highlights: [
+      'Built in a team of six',
+      'Contributed to the production deployment, floor plan, backend and Microsoft Graph API integration for room availability',
+    ],
     link: 'https://github.com/Infopisteprojekti/infopiste',
     image: infoScreenImage,
     skills: [
@@ -76,7 +89,11 @@ export const projectData: Project[] = [
     title: 'News article manager',
     company: 'University project',
     description:
-      'Application for saving and managing news articles from RSS feeds',
+      'Application for saving and managing news articles from RSS feeds.',
+    highlights: [
+      'Built solo with a layered architecture',
+      'Automated tests and CI with coverage reporting',
+    ],
     link: 'https://github.com/jipeso/ohjelmistotekniikka',
     image: newsArticlesImage,
     skills: ['Python', 'Flask', 'Poetry', 'SQLite', 'Pytest', 'GitHub Actions'],
@@ -85,7 +102,12 @@ export const projectData: Project[] = [
     title: 'BibTeX reference manager',
     company: 'University project',
     description:
-      'Application for creating and managing BibTeX references for academic writing',
+      'Application for creating and managing BibTeX references for academic writing.',
+    highlights: [
+      'Built in a Scrum team of six',
+      'Contributed to frontend development',
+      'Automated tests and CI with coverage reporting',
+    ],
     link: 'https://github.com/ruokokoski/ohtu-miniprojekti',
     image: bibtexProjectImage,
     skills: [

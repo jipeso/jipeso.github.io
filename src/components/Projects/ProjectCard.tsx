@@ -65,6 +65,20 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           }}
         />
         <Typography color='text.secondary'>{project.description}</Typography>
+        {project.highlights && (
+          <Box component='ul' sx={{ mt: 1.5, mb: 0, pl: 2.5 }}>
+            {project.highlights.map(highlight => (
+              <Typography
+                key={highlight}
+                component='li'
+                color='text.secondary'
+                sx={{ mb: 0.5 }}
+              >
+                {highlight}
+              </Typography>
+            ))}
+          </Box>
+        )}
       </CardContent>
       <Box
         sx={{

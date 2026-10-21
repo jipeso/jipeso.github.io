@@ -23,6 +23,7 @@ export interface Project {
   title: string
   company?: string
   description: string
+  highlights?: string[]
   production?: string
   link?: string
   image?: string
