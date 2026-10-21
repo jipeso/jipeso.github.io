@@ -1,95 +1,94 @@
-import { type ElementType } from 'react'
-import ReactOriginal from 'devicons-react/icons/ReactOriginal'
-import PythonOriginal from 'devicons-react/icons/PythonOriginal'
-import FlaskOriginal from 'devicons-react/icons/FlaskOriginal'
-import DjangoPlain from 'devicons-react/icons/DjangoPlain'
-import JavascriptOriginal from 'devicons-react/icons/JavascriptOriginal'
-import TypescriptOriginal from 'devicons-react/icons/TypescriptOriginal'
-import NodejsOriginal from 'devicons-react/icons/NodejsOriginal'
-import ExpressOriginal from 'devicons-react/icons/ExpressOriginal'
-import MongodbOriginal from 'devicons-react/icons/MongodbOriginal'
-import PostgresqlOriginal from 'devicons-react/icons/PostgresqlOriginal'
-import RedisOriginal from 'devicons-react/icons/RedisOriginal'
-import DockerOriginal from 'devicons-react/icons/DockerOriginal'
-import GitOriginal from 'devicons-react/icons/GitOriginal'
-import Html5Original from 'devicons-react/icons/Html5Original'
-import Css3Original from 'devicons-react/icons/Css3Original'
-import KubernetesOriginal from 'devicons-react/icons/KubernetesOriginal'
-import ReduxOriginal from 'devicons-react/icons/ReduxOriginal'
-import VitejsOriginal from 'devicons-react/icons/VitejsOriginal'
-import TailwindcssOriginal from 'devicons-react/icons/TailwindcssOriginal'
-import GithubactionsOriginal from 'devicons-react/icons/GithubactionsOriginal'
-import PlaywrightOriginal from 'devicons-react/icons/PlaywrightOriginal'
-import ApollographqlOriginal from 'devicons-react/icons/ApollographqlOriginal'
-import PoetryOriginal from 'devicons-react/icons/PoetryOriginal'
-import MaterialuiOriginal from 'devicons-react/icons/MaterialuiOriginal'
-import ReactnativeOriginal from 'devicons-react/icons/ReactnativeOriginal'
-import ExpoOriginal from 'devicons-react/icons/ExpoOriginal'
-import SqliteOriginal from 'devicons-react/icons/SqliteOriginal'
-import NextjsPlain from 'devicons-react/icons/NextjsPlain'
-import NginxOriginal from 'devicons-react/icons/NginxOriginal'
-import AzureOriginal from 'devicons-react/icons/AzureOriginal'
-import AmazonwebservicesPlainWordmark from 'devicons-react/icons/AmazonwebservicesPlainWordmark'
-import PytestOriginal from 'devicons-react/icons/PytestOriginal'
-import VitestOriginal from 'devicons-react/icons/VitestOriginal'
+import reactIcon from '../assets/skills/react.svg'
+import pythonIcon from '../assets/skills/python.svg'
+import flaskIcon from '../assets/skills/flask.svg'
+import djangoIcon from '../assets/skills/django.svg'
+import javascriptIcon from '../assets/skills/javascript.svg'
+import typescriptIcon from '../assets/skills/typescript.svg'
+import nodejsIcon from '../assets/skills/nodejs.svg'
+import expressIcon from '../assets/skills/express.svg'
+import mongodbIcon from '../assets/skills/mongodb.svg'
+import postgresqlIcon from '../assets/skills/postgresql.svg'
+import redisIcon from '../assets/skills/redis.svg'
+import dockerIcon from '../assets/skills/docker.svg'
+import gitIcon from '../assets/skills/git.svg'
+import html5Icon from '../assets/skills/html5.svg'
+import css3Icon from '../assets/skills/css3.svg'
+import kubernetesIcon from '../assets/skills/kubernetes.svg'
+import reduxIcon from '../assets/skills/redux.svg'
+import vitejsIcon from '../assets/skills/vitejs.svg'
+import tailwindcssIcon from '../assets/skills/tailwindcss.svg'
+import githubactionsIcon from '../assets/skills/githubactions.svg'
+import playwrightIcon from '../assets/skills/playwright.svg'
+import apollographqlIcon from '../assets/skills/apollographql.svg'
+import poetryIcon from '../assets/skills/poetry.svg'
+import materialuiIcon from '../assets/skills/materialui.svg'
+import reactnativeIcon from '../assets/skills/reactnative.svg'
+import expoIcon from '../assets/skills/expo.svg'
+import sqliteIcon from '../assets/skills/sqlite.svg'
+import nextjsIcon from '../assets/skills/nextjs.svg'
+import nginxIcon from '../assets/skills/nginx.svg'
+import azureIcon from '../assets/skills/azure.svg'
+import amazonwebservicesIcon from '../assets/skills/amazonwebservices.svg'
+import pytestIcon from '../assets/skills/pytest.svg'
+import vitestIcon from '../assets/skills/vitest.svg'
 
 export interface Skill {
   name: string
-  Icon: ElementType
+  icon: string
   familiar?: boolean
   monochrome?: boolean
 }
 
 export const skillsByCategory = {
   Languages: [
-    { name: 'TypeScript', Icon: TypescriptOriginal },
-    { name: 'JavaScript', Icon: JavascriptOriginal },
-    { name: 'Python', Icon: PythonOriginal },
-    { name: 'HTML', Icon: Html5Original },
-    { name: 'CSS', Icon: Css3Original },
+    { name: 'TypeScript', icon: typescriptIcon },
+    { name: 'JavaScript', icon: javascriptIcon },
+    { name: 'Python', icon: pythonIcon },
+    { name: 'HTML', icon: html5Icon },
+    { name: 'CSS', icon: css3Icon },
   ],
   Frontend: [
-    { name: 'React', Icon: ReactOriginal },
-    { name: 'Material UI', Icon: MaterialuiOriginal },
-    { name: 'Redux', Icon: ReduxOriginal, familiar: true },
-    { name: 'Tailwind', Icon: TailwindcssOriginal, familiar: true },
-    { name: 'Next.js', Icon: NextjsPlain, familiar: true, monochrome: true },
-    { name: 'React Native', Icon: ReactnativeOriginal, familiar: true },
-    { name: 'Expo', Icon: ExpoOriginal, familiar: true, monochrome: true },
+    { name: 'React', icon: reactIcon },
+    { name: 'Material UI', icon: materialuiIcon },
+    { name: 'Redux', icon: reduxIcon, familiar: true },
+    { name: 'Tailwind', icon: tailwindcssIcon, familiar: true },
+    { name: 'Next.js', icon: nextjsIcon, familiar: true, monochrome: true },
+    { name: 'React Native', icon: reactnativeIcon, familiar: true },
+    { name: 'Expo', icon: expoIcon, familiar: true, monochrome: true },
   ],
   Backend: [
-    { name: 'Node.js', Icon: NodejsOriginal },
-    { name: 'Express', Icon: ExpressOriginal, monochrome: true },
-    { name: 'Flask', Icon: FlaskOriginal, monochrome: true },
-    { name: 'Django', Icon: DjangoPlain, familiar: true, monochrome: true },
+    { name: 'Node.js', icon: nodejsIcon },
+    { name: 'Express', icon: expressIcon, monochrome: true },
+    { name: 'Flask', icon: flaskIcon, monochrome: true },
+    { name: 'Django', icon: djangoIcon, familiar: true, monochrome: true },
     {
       name: 'Apollo GraphQL',
-      Icon: ApollographqlOriginal,
+      icon: apollographqlIcon,
       familiar: true,
       monochrome: true,
     },
   ],
   Databases: [
-    { name: 'PostgreSQL', Icon: PostgresqlOriginal },
-    { name: 'MongoDB', Icon: MongodbOriginal },
-    { name: 'SQLite', Icon: SqliteOriginal },
-    { name: 'Redis', Icon: RedisOriginal },
+    { name: 'PostgreSQL', icon: postgresqlIcon },
+    { name: 'MongoDB', icon: mongodbIcon },
+    { name: 'SQLite', icon: sqliteIcon },
+    { name: 'Redis', icon: redisIcon },
   ],
   'DevOps & Cloud': [
-    { name: 'Docker', Icon: DockerOriginal },
-    { name: 'GitHub Actions', Icon: GithubactionsOriginal },
-    { name: 'Kubernetes', Icon: KubernetesOriginal },
-    { name: 'NGINX', Icon: NginxOriginal },
-    { name: 'Azure', Icon: AzureOriginal },
-    { name: 'AWS', Icon: AmazonwebservicesPlainWordmark, monochrome: true },
+    { name: 'Docker', icon: dockerIcon },
+    { name: 'GitHub Actions', icon: githubactionsIcon },
+    { name: 'Kubernetes', icon: kubernetesIcon },
+    { name: 'NGINX', icon: nginxIcon },
+    { name: 'Azure', icon: azureIcon },
+    { name: 'AWS', icon: amazonwebservicesIcon, monochrome: true },
   ],
   'Testing & Tooling': [
-    { name: 'Playwright', Icon: PlaywrightOriginal },
-    { name: 'Vitest', Icon: VitestOriginal },
-    { name: 'Pytest', Icon: PytestOriginal },
-    { name: 'Vite', Icon: VitejsOriginal },
-    { name: 'Poetry', Icon: PoetryOriginal },
-    { name: 'Git', Icon: GitOriginal },
+    { name: 'Playwright', icon: playwrightIcon },
+    { name: 'Vitest', icon: vitestIcon },
+    { name: 'Pytest', icon: pytestIcon },
+    { name: 'Vite', icon: vitejsIcon },
+    { name: 'Poetry', icon: poetryIcon },
+    { name: 'Git', icon: gitIcon },
   ],
 } as const satisfies Record<string, readonly Skill[]>
 

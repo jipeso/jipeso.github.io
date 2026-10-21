@@ -16,7 +16,7 @@ export const socials: SocialLink[] = [
   },
   {
     title: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/joni-pesonen-876b9224b',
+    link: 'https://www.linkedin.com/in/pesonen-joni',
     Icon: LinkedInIcon,
   },
 ]

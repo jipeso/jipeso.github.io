@@ -1,4 +1,4 @@
-import { alpha, createTheme } from '@mui/material/styles'
+import { alpha, createTheme, type Theme } from '@mui/material/styles'
 
 export const colors = {
   light: { primary: '#9A6811', text: '#1C1917', background: '#FAF8F4' },
@@ -7,10 +7,13 @@ export const colors = {
 
 const { light, dark } = colors
 
+const focusOutline = (theme: Theme) => ({
+  outline: `2px solid ${(theme.vars ?? theme).palette.primary.main}`,
+  outlineOffset: 2,
+})
+
 export const theme = createTheme({
-  cssVariables: {
-    colorSchemeSelector: 'class',
-  },
+  cssVariables: true,
   defaultColorScheme: 'dark',
   colorSchemes: {
     light: {
@@ -51,15 +54,14 @@ export const theme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: theme => ({
-        html: {
-          scrollBehavior: 'smooth',
-          scrollPaddingTop: 72,
-          [theme.breakpoints.up('sm')]: { scrollPaddingTop: 80 },
-          '@media (prefers-reduced-motion: reduce)': {
-            scrollBehavior: 'auto',
-          },
-        },
+        ':focus-visible': focusOutline(theme),
       }),
+    },
+    MuiButtonBase: {
+      defaultProps: { disableRipple: true },
+      styleOverrides: {
+        root: ({ theme }) => ({ '&:focus-visible': focusOutline(theme) }),
+      },
     },
     MuiCard: {
       defaultProps: { variant: 'outlined' },
@@ -71,9 +73,6 @@ export const theme = createTheme({
       defaultProps: {
         variantMapping: { subtitle1: 'p', subtitle2: 'p' },
       },
-    },
-    MuiTooltip: {
-      defaultProps: { arrow: true, enterDelay: 300, enterNextDelay: 300 },
     },
   },
 })

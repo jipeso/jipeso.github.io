@@ -1,9 +1,8 @@
 # Portfolio
 
-React + TypeScript + Vite + MUI portfolio. CI (`.github/workflows/ci.yml`) runs the checks on every push and PR, and deploys to GitHub Pages from `main` only when they pass.
-
 - Content lives in `src/data/`. Components only render it. `index.html` head tags are generated from it in `vite.config.ts`.
-- Verify with `npm run lint` (includes type-check), `npm test` and `npm run test:e2e` (Playwright + axe, builds first). Format with `npm run format`.
+- React never runs in the browser: the page is pre-rendered (`src/entry-server.ts`). Hooks and event handlers do nothing. Make interactivity work with CSS, or with data attributes wired up in `src/main.ts`.
+- Verify with `npm run lint` (includes type-check), `npm test` and `npm run test:e2e`. Format with `npm run format`.
 
 ## Style
 

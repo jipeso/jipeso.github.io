@@ -1,6 +1,5 @@
 export const profile = {
   name: 'Joni Pesonen',
-  handle: 'jipeso',
   role: 'Full-stack developer',
   location: 'Helsinki, Finland',
   email: 'jipesonen@gmail.com',

@@ -15,7 +15,6 @@ export default defineConfig({
   rules: {
     'react/rules-of-hooks': 'error',
     'react/exhaustive-deps': 'error',
-    'react/only-export-components': ['error', { allowConstantExport: true }],
   },
   ignorePatterns: ['dist'],
 })

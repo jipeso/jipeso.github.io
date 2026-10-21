@@ -1,8 +1,8 @@
-export const sections = {
-  about: { label: 'About', title: 'About me' },
-  skills: { label: 'Skills', title: 'Skills' },
-  experience: { label: 'Experience', title: 'Experience' },
-  projects: { label: 'Projects', title: 'Featured projects' },
+export const sectionTitles = {
+  about: 'About me',
+  skills: 'Skills',
+  experience: 'Experience',
+  projects: 'Featured projects',
 }
 
-export type SectionId = keyof typeof sections
+export type SectionId = keyof typeof sectionTitles
