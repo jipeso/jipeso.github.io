@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles'
 
 export const theme = createTheme({
   cssVariables: {
@@ -57,4 +57,4 @@ export const theme = createTheme({
     overline: { fontWeight: 700 },
     body2: { fontWeight: 500 },
   },
-});
+})

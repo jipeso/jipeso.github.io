@@ -1,15 +1,15 @@
-import { Button, ListItem, ListItemText, ListItemButton } from '@mui/material';
+import { Button, ListItem, ListItemText, ListItemButton } from '@mui/material'
 
-const NAV_ITEMS = ['about', 'skills', 'projects'];
+const NAV_ITEMS = ['about', 'skills', 'projects']
 
 interface NavLinkProps {
-  onItemClick: (id: string) => void;
-  isMobile?: boolean;
+  onItemClick: (id: string) => void
+  isMobile?: boolean
 }
 
 const NavLinks = ({ onItemClick, isMobile = false }: NavLinkProps) => (
   <>
-    {NAV_ITEMS.map((item) =>
+    {NAV_ITEMS.map(item =>
       isMobile ? (
         <ListItem key={item} disablePadding>
           <ListItemButton
@@ -22,7 +22,7 @@ const NavLinks = ({ onItemClick, isMobile = false }: NavLinkProps) => (
       ) : (
         <Button
           key={item}
-          color="inherit"
+          color='inherit'
           onClick={() => onItemClick(item)}
           sx={{
             textTransform: 'uppercase',
@@ -34,6 +34,6 @@ const NavLinks = ({ onItemClick, isMobile = false }: NavLinkProps) => (
       )
     )}
   </>
-);
+)
 
-export default NavLinks;
+export default NavLinks

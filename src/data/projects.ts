@@ -1,11 +1,30 @@
-import { type Project } from '../types';
+import { type Project } from '../types'
 
-import newsArticlesImage from '../assets/articles-project.webp';
-import infoScreenImage from '../assets/infoscreen-project.webp';
-import bibtexProjectImage from '../assets/bibtex-project.webp';
-import itArkkitehtuuriImage from '../assets/it-arkkitehtuuri-project.webp';
+import newsArticlesImage from '../assets/articles-project.webp'
+import infoScreenImage from '../assets/infoscreen-project.webp'
+import bibtexProjectImage from '../assets/bibtex-project.webp'
+import itArkkitehtuuriImage from '../assets/it-arkkitehtuuri-project.webp'
+import duunitImage from '../assets/duunit-project.webp'
 
 export const projectData: Project[] = [
+  {
+    title: 'Duunit',
+    company: 'University project',
+    description:
+      'Duunit is a personal job application tracker. Users can create and manage job applications and track their progress. The application also provides a dashboard for visualizing application statistics and an AI job description analysis tool.',
+    link: 'https://github.com/jipeso/duunit',
+    image: duunitImage,
+    production: 'https://duunit.site',
+    skills: [
+      'TypeScript',
+      'Docker',
+      'Node.js',
+      'React',
+      'Material UI',
+      'Express',
+      'PostgreSQL',
+    ],
+  },
   {
     title: 'IT-Arkkitehtuuri',
     company: '2M-IT Oy',
@@ -50,4 +69,4 @@ export const projectData: Project[] = [
     image: bibtexProjectImage,
     skills: ['Python', 'Flask', 'Poetry', 'PostgreSQL'],
   },
-];
+]

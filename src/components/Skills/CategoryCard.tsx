@@ -1,10 +1,10 @@
-import { Box, Typography, Grid } from '@mui/material';
-import type { Skill } from '../../types';
-import SkillItem from './SkillItem';
+import { Box, Typography, Grid } from '@mui/material'
+import type { Skill } from '../../types'
+import SkillItem from './SkillItem'
 
 interface CategoryCardProps {
-  title: string;
-  skills: Skill[];
+  title: string
+  skills: Skill[]
 }
 
 const CategoryCard = ({ title, skills }: CategoryCardProps) => {
@@ -19,19 +19,19 @@ const CategoryCard = ({ title, skills }: CategoryCardProps) => {
         height: '100%',
       }}
     >
-      <Typography variant="h3" gutterBottom>
+      <Typography variant='h3' gutterBottom>
         {title}
       </Typography>
 
       <Grid container spacing={1}>
-        {skills.map((skill) => (
+        {skills.map(skill => (
           <Grid key={skill.name}>
             <SkillItem skill={skill} />
           </Grid>
         ))}
       </Grid>
     </Box>
-  );
-};
+  )
+}
 
-export default CategoryCard;
+export default CategoryCard

@@ -1,4 +1,4 @@
-import { type ElementType } from 'react';
+import { type ElementType } from 'react'
 
 export type Category =
   | 'Languages'
@@ -6,25 +6,26 @@ export type Category =
   | 'Databases'
   | 'DevOps & Infrastructure'
   | 'Developer Tools'
-  | 'Testing & Automation';
+  | 'Testing & Automation'
 
 export interface Skill {
-  name: string;
-  category: Category;
-  IconComponent: ElementType;
+  name: string
+  category: Category
+  IconComponent: ElementType
 }
 
 export interface Project {
-  title: string;
-  company?: string;
-  description: string;
-  link?: string;
-  image?: string;
-  skills?: string[];
+  title: string
+  company?: string
+  description: string
+  production?: string
+  link?: string
+  image?: string
+  skills?: string[]
 }
 export interface SocialsLink {
-  title: string;
-  link: string;
-  icon: ElementType;
-  label: string;
+  title: string
+  link: string
+  icon: ElementType
+  label: string
 }

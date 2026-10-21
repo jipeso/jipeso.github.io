@@ -1,9 +1,9 @@
-import { Stack, Tooltip, IconButton } from '@mui/material';
-import { socialsData } from '../../data/socials';
+import { Stack, Tooltip, IconButton } from '@mui/material'
+import { socialsData } from '../../data/socials'
 
 const SocialLinks = () => {
   return (
-    <Stack direction="row" spacing={1.5} sx={{ mt: 3 }}>
+    <Stack direction='row' spacing={1.5} sx={{ mt: 3 }}>
       {socialsData.map(({ title, link, icon: Icon, label }) => (
         <Tooltip
           key={title}
@@ -14,7 +14,7 @@ const SocialLinks = () => {
         >
           <IconButton
             href={link}
-            target="_blank"
+            target='_blank'
             aria-label={label}
             sx={{
               border: '1px solid',
@@ -28,7 +28,7 @@ const SocialLinks = () => {
         </Tooltip>
       ))}
     </Stack>
-  );
-};
+  )
+}
 
-export default SocialLinks;
+export default SocialLinks

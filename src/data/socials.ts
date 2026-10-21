@@ -1,7 +1,7 @@
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
 
-import { type SocialsLink } from '../types';
+import { type SocialsLink } from '../types'
 
 export const socialsData: SocialsLink[] = [
   {
@@ -16,4 +16,4 @@ export const socialsData: SocialsLink[] = [
     icon: LinkedInIcon,
     label: 'Link to LinkedIn Profile',
   },
-];
+]

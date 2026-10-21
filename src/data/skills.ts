@@ -1,33 +1,34 @@
-import ReactOriginal from 'devicons-react/icons/ReactOriginal';
-import PythonOriginal from 'devicons-react/icons/PythonOriginal';
-import FlaskOriginal from 'devicons-react/icons/FlaskOriginal';
-import JavascriptOriginal from 'devicons-react/icons/JavascriptOriginal';
-import TypescriptOriginal from 'devicons-react/icons/TypescriptOriginal';
-import NodejsOriginal from 'devicons-react/icons/NodejsOriginal';
-import ExpressOriginal from 'devicons-react/icons/ExpressOriginal';
-import MongodbOriginal from 'devicons-react/icons/MongodbOriginal';
-import PostgresqlOriginal from 'devicons-react/icons/PostgresqlOriginal';
-import RedisOriginal from 'devicons-react/icons/RedisOriginal';
-import DockerOriginal from 'devicons-react/icons/DockerOriginal';
-import GithubOriginal from 'devicons-react/icons/GithubOriginal';
-import GitOriginal from 'devicons-react/icons/GitOriginal';
-import Html5Original from 'devicons-react/icons/Html5Original';
-import Css3Original from 'devicons-react/icons/Css3Original';
-import UbuntuOriginal from 'devicons-react/icons/UbuntuOriginal';
-import KubernetesOriginal from 'devicons-react/icons/KubernetesOriginal';
-import ReduxOriginal from 'devicons-react/icons/ReduxOriginal';
-import VitejsOriginal from 'devicons-react/icons/VitejsOriginal';
-import TailwindcssOriginal from 'devicons-react/icons/TailwindcssOriginal';
-import GithubactionsOriginal from 'devicons-react/icons/GithubactionsOriginal';
-import PlaywrightOriginal from 'devicons-react/icons/PlaywrightOriginal';
-import ApollographqlOriginal from 'devicons-react/icons/ApollographqlOriginal';
-import PoetryOriginal from 'devicons-react/icons/PoetryOriginal';
-import MaterialuiOriginal from 'devicons-react/icons/MaterialuiOriginal';
-import ReactnativeOriginal from 'devicons-react/icons/ReactnativeOriginal';
-import ExpoOriginal from 'devicons-react/icons/ExpoOriginal';
-import SqliteOriginal from 'devicons-react/icons/SqliteOriginal';
+import ReactOriginal from 'devicons-react/icons/ReactOriginal'
+import PythonOriginal from 'devicons-react/icons/PythonOriginal'
+import FlaskOriginal from 'devicons-react/icons/FlaskOriginal'
+import JavascriptOriginal from 'devicons-react/icons/JavascriptOriginal'
+import TypescriptOriginal from 'devicons-react/icons/TypescriptOriginal'
+import NodejsOriginal from 'devicons-react/icons/NodejsOriginal'
+import ExpressOriginal from 'devicons-react/icons/ExpressOriginal'
+import MongodbOriginal from 'devicons-react/icons/MongodbOriginal'
+import PostgresqlOriginal from 'devicons-react/icons/PostgresqlOriginal'
+import RedisOriginal from 'devicons-react/icons/RedisOriginal'
+import DockerOriginal from 'devicons-react/icons/DockerOriginal'
+import GithubOriginal from 'devicons-react/icons/GithubOriginal'
+import GitOriginal from 'devicons-react/icons/GitOriginal'
+import Html5Original from 'devicons-react/icons/Html5Original'
+import Css3Original from 'devicons-react/icons/Css3Original'
+import UbuntuOriginal from 'devicons-react/icons/UbuntuOriginal'
+import KubernetesOriginal from 'devicons-react/icons/KubernetesOriginal'
+import ReduxOriginal from 'devicons-react/icons/ReduxOriginal'
+import VitejsOriginal from 'devicons-react/icons/VitejsOriginal'
+import TailwindcssOriginal from 'devicons-react/icons/TailwindcssOriginal'
+import GithubactionsOriginal from 'devicons-react/icons/GithubactionsOriginal'
+import PlaywrightOriginal from 'devicons-react/icons/PlaywrightOriginal'
+import ApollographqlOriginal from 'devicons-react/icons/ApollographqlOriginal'
+import PoetryOriginal from 'devicons-react/icons/PoetryOriginal'
+import MaterialuiOriginal from 'devicons-react/icons/MaterialuiOriginal'
+import ReactnativeOriginal from 'devicons-react/icons/ReactnativeOriginal'
+import ExpoOriginal from 'devicons-react/icons/ExpoOriginal'
+import SqliteOriginal from 'devicons-react/icons/SqliteOriginal'
+import NextjsOriginal from 'devicons-react/icons/NextjsOriginal'
 
-import { type Skill } from '../types';
+import { type Skill } from '../types'
 import {
   AzureOriginal,
   EslintOriginal,
@@ -37,7 +38,7 @@ import {
   SequelizeOriginal,
   VitestOriginal,
   VscodeOriginal,
-} from 'devicons-react';
+} from 'devicons-react'
 
 export const skillData: Skill[] = [
   {
@@ -208,4 +209,9 @@ export const skillData: Skill[] = [
     category: 'Developer Tools',
     IconComponent: VscodeOriginal,
   },
-];
+  {
+    name: 'Next.js',
+    category: 'Frameworks & UI',
+    IconComponent: NextjsOriginal,
+  },
+]

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import {
   AppBar,
   IconButton,
@@ -9,35 +9,35 @@ import {
   List,
   useColorScheme,
   Divider,
-} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
+} from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
 
-import NavLinks from './NavLinks';
+import NavLinks from './NavLinks'
 
-const DRAWER_WIDTH = 140;
+const DRAWER_WIDTH = 140
 
 const Navbar = () => {
-  const { mode, setMode } = useColorScheme();
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const { mode, setMode } = useColorScheme()
+  const [mobileOpen, setMobileOpen] = useState(false)
 
-  const toggleTheme = () => setMode(mode === 'light' ? 'dark' : 'light');
-  const handleDrawerToggle = () => setMobileOpen((prev) => !prev);
+  const toggleTheme = () => setMode(mode === 'light' ? 'dark' : 'light')
+  const handleDrawerToggle = () => setMobileOpen(prev => !prev)
 
   const handleNavClick = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ block: 'start' });
-  };
+    document.getElementById(sectionId)?.scrollIntoView({ block: 'start' })
+  }
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0 });
-  };
+    window.scrollTo({ top: 0 })
+  }
 
   return (
     <>
       <AppBar
-        component="nav"
-        position="sticky"
+        component='nav'
+        position='sticky'
         elevation={0}
         sx={{
           borderBottom: '1px solid',
@@ -47,17 +47,17 @@ const Navbar = () => {
       >
         <Toolbar>
           <IconButton
-            edge="start"
+            edge='start'
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'none' }, color: 'text.primary' }}
-            aria-label="open navigation menu"
+            aria-label='open navigation menu'
           >
             <MenuIcon />
           </IconButton>
 
           <Typography
-            variant="subtitle1"
-            color="text.primary"
+            variant='subtitle1'
+            color='text.primary'
             onClick={scrollToTop}
             sx={{
               cursor: 'pointer',
@@ -76,7 +76,7 @@ const Navbar = () => {
 
           <IconButton
             onClick={toggleTheme}
-            color="inherit"
+            color='inherit'
             sx={{ color: 'text.primary' }}
             aria-label={`switch to ${mode === 'light' ? 'dark' : 'light'} mode`}
           >
@@ -86,7 +86,7 @@ const Navbar = () => {
       </AppBar>
 
       <Drawer
-        variant="temporary"
+        variant='temporary'
         open={mobileOpen}
         onClose={handleDrawerToggle}
         ModalProps={{ keepMounted: true }}
@@ -100,7 +100,7 @@ const Navbar = () => {
         }}
       >
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', pt: 2 }}>
-          <Typography variant="subtitle1" sx={{ mb: 2 }}>
+          <Typography variant='subtitle1' sx={{ mb: 2 }}>
             MENU
           </Typography>
           <Divider />
@@ -110,7 +110,7 @@ const Navbar = () => {
         </Box>
       </Drawer>
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

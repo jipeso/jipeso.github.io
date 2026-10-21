@@ -5,19 +5,19 @@ import {
   Box,
   Typography,
   Button,
-} from '@mui/material';
-import { type Project } from '../../types';
-import { skillData } from '../../data/skills';
-import SkillItem from '../Skills/SkillItem';
+} from '@mui/material'
+import { type Project } from '../../types'
+import { skillData } from '../../data/skills'
+import SkillItem from '../Skills/SkillItem'
 
 interface ProjectCardProps {
-  project: Project;
+  project: Project
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const projectSkills = project.skills
-    ? skillData.filter((skill) => project.skills?.includes(skill.name))
-    : [];
+    ? skillData.filter(skill => project.skills?.includes(skill.name))
+    : []
 
   return (
     <Card
@@ -42,15 +42,15 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             gap: 1,
           }}
         >
-          <Typography variant="h3">{project.title}</Typography>
+          <Typography variant='h3'>{project.title}</Typography>
           {project.company && (
-            <Typography variant="subtitle2" color="text.secondary">
+            <Typography variant='subtitle2' color='text.secondary'>
               {project.company}
             </Typography>
           )}
         </Box>
         <CardMedia
-          component="img"
+          component='img'
           image={project.image}
           alt={project.title}
           sx={{
@@ -63,7 +63,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             mb: 2,
           }}
         />
-        <Typography color="text.secondary">{project.description}</Typography>
+        <Typography color='text.secondary'>{project.description}</Typography>
       </CardContent>
       <Box
         sx={{
@@ -71,7 +71,8 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           px: 2,
           pb: 2,
           display: 'flex',
-          alignItems: 'flex-end',
+          flexDirection: { xs: 'column', sm: 'row' },
+          alignItems: { xs: 'flex-start', sm: 'flex-end' },
           justifyContent: 'space-between',
           gap: 2,
         }}
@@ -80,34 +81,48 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           {projectSkills.length > 0 && (
             <Box>
               <Typography
-                variant="caption"
-                color="text.secondary"
+                variant='caption'
+                color='text.secondary'
                 sx={{ mb: 1, display: 'block' }}
               >
                 Key technologies:
               </Typography>
               <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                {projectSkills.map((skill) => (
+                {projectSkills.map(skill => (
                   <SkillItem key={skill.name} skill={skill} />
                 ))}
               </Box>
             </Box>
           )}
         </Box>
-        {project.link && (
-          <Button
-            size="small"
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{ flexShrink: 0 }}
-          >
-            View Repository
-          </Button>
+
+        {(project.production || project.link) && (
+          <Box sx={{ display: 'flex', gap: 1, flexShrink: 0 }}>
+            {project.production && (
+              <Button
+                size='small'
+                href={project.production}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                View Production
+              </Button>
+            )}
+            {project.link && (
+              <Button
+                size='small'
+                href={project.link}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                View Repository
+              </Button>
+            )}
+          </Box>
         )}
       </Box>
     </Card>
-  );
-};
+  )
+}
 
-export default ProjectCard;
+export default ProjectCard

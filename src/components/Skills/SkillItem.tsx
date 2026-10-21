@@ -1,19 +1,19 @@
-import { Tooltip, Paper } from '@mui/material';
-import { type Skill } from '../../types';
+import { Tooltip, Paper } from '@mui/material'
+import { type Skill } from '../../types'
 
 interface SkillItemProps {
-  skill: Skill;
+  skill: Skill
 }
 
 const SkillItem = ({ skill }: SkillItemProps) => {
-  const { name, IconComponent } = skill;
+  const { name, IconComponent } = skill
 
   return (
     <Tooltip title={name} arrow enterDelay={300} enterNextDelay={300}>
       <Paper
-        variant="outlined"
-        component="div"
-        role="img"
+        variant='outlined'
+        component='div'
+        role='img'
         aria-label={name}
         sx={{
           display: 'flex',
@@ -35,7 +35,7 @@ const SkillItem = ({ skill }: SkillItemProps) => {
         <IconComponent size={32} />
       </Paper>
     </Tooltip>
-  );
-};
+  )
+}
 
-export default SkillItem;
+export default SkillItem

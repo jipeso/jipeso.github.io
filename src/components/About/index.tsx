@@ -1,11 +1,11 @@
-import { Box, Container, Typography } from '@mui/material';
-import Highlight from './Highlight';
+import { Box, Container, Typography } from '@mui/material'
+import Highlight from './Highlight'
 
 const About = () => {
   return (
-    <Box component="section" id="about" sx={{ scrollMarginTop: '60px' }}>
-      <Container maxWidth="md">
-        <Typography variant="h2" sx={{ mb: 2 }}>
+    <Box component='section' id='about' sx={{ scrollMarginTop: '60px' }}>
+      <Container maxWidth='md'>
+        <Typography variant='h2' sx={{ mb: 2 }}>
           About me
         </Typography>
         <Typography
@@ -31,7 +31,7 @@ const About = () => {
         </Typography>
       </Container>
     </Box>
-  );
-};
+  )
+}
 
-export default About;
+export default About
