@@ -1,6 +1,7 @@
 import ReactOriginal from 'devicons-react/icons/ReactOriginal'
 import PythonOriginal from 'devicons-react/icons/PythonOriginal'
 import FlaskOriginal from 'devicons-react/icons/FlaskOriginal'
+import DjangoPlain from 'devicons-react/icons/DjangoPlain'
 import JavascriptOriginal from 'devicons-react/icons/JavascriptOriginal'
 import TypescriptOriginal from 'devicons-react/icons/TypescriptOriginal'
 import NodejsOriginal from 'devicons-react/icons/NodejsOriginal'
@@ -9,11 +10,9 @@ import MongodbOriginal from 'devicons-react/icons/MongodbOriginal'
 import PostgresqlOriginal from 'devicons-react/icons/PostgresqlOriginal'
 import RedisOriginal from 'devicons-react/icons/RedisOriginal'
 import DockerOriginal from 'devicons-react/icons/DockerOriginal'
-import GithubOriginal from 'devicons-react/icons/GithubOriginal'
 import GitOriginal from 'devicons-react/icons/GitOriginal'
 import Html5Original from 'devicons-react/icons/Html5Original'
 import Css3Original from 'devicons-react/icons/Css3Original'
-import UbuntuOriginal from 'devicons-react/icons/UbuntuOriginal'
 import KubernetesOriginal from 'devicons-react/icons/KubernetesOriginal'
 import ReduxOriginal from 'devicons-react/icons/ReduxOriginal'
 import VitejsOriginal from 'devicons-react/icons/VitejsOriginal'
@@ -26,192 +25,239 @@ import MaterialuiOriginal from 'devicons-react/icons/MaterialuiOriginal'
 import ReactnativeOriginal from 'devicons-react/icons/ReactnativeOriginal'
 import ExpoOriginal from 'devicons-react/icons/ExpoOriginal'
 import SqliteOriginal from 'devicons-react/icons/SqliteOriginal'
-import NextjsOriginal from 'devicons-react/icons/NextjsOriginal'
+import NextjsPlain from 'devicons-react/icons/NextjsPlain'
+import NginxOriginal from 'devicons-react/icons/NginxOriginal'
+import AzureOriginal from 'devicons-react/icons/AzureOriginal'
+import AmazonwebservicesPlainWordmark from 'devicons-react/icons/AmazonwebservicesPlainWordmark'
+import PytestOriginal from 'devicons-react/icons/PytestOriginal'
+import VitestOriginal from 'devicons-react/icons/VitestOriginal'
 
-import { type Skill } from '../types'
-import {
-  AzureOriginal,
-  EslintOriginal,
-  NginxOriginal,
-  PostmanOriginal,
-  PytestOriginal,
-  SequelizeOriginal,
-  VitestOriginal,
-  VscodeOriginal,
-} from 'devicons-react'
+import { type Category, type Skill } from '../types'
 
-export const skillData: Skill[] = [
+export const CATEGORIES: Category[] = [
+  'Languages',
+  'Frontend',
+  'Backend',
+  'Databases',
+  'DevOps & Cloud',
+  'Testing & Tooling',
+]
+
+export const skillData = [
   {
-    name: 'Python',
+    name: 'TypeScript',
     category: 'Languages',
-    IconComponent: PythonOriginal,
-  },
-  {
-    name: 'Flask',
-    category: 'Frameworks & UI',
-    IconComponent: FlaskOriginal,
+    level: 'primary',
+    IconComponent: TypescriptOriginal,
   },
   {
     name: 'JavaScript',
     category: 'Languages',
+    level: 'primary',
     IconComponent: JavascriptOriginal,
   },
   {
-    name: 'TypeScript',
+    name: 'Python',
     category: 'Languages',
-    IconComponent: TypescriptOriginal,
+    level: 'primary',
+    IconComponent: PythonOriginal,
   },
-  {
-    name: 'React',
-    category: 'Frameworks & UI',
-    IconComponent: ReactOriginal,
-  },
-  {
-    name: 'Express',
-    category: 'Frameworks & UI',
-    IconComponent: ExpressOriginal,
-  },
-  {
-    name: 'Node.js',
-    category: 'Developer Tools',
-    IconComponent: NodejsOriginal,
-  },
-  { name: 'MongoDB', category: 'Databases', IconComponent: MongodbOriginal },
-  {
-    name: 'PostgreSQL',
-    category: 'Databases',
-    IconComponent: PostgresqlOriginal,
-  },
-  { name: 'Redis', category: 'Databases', IconComponent: RedisOriginal },
-  {
-    name: 'Docker',
-    category: 'DevOps & Infrastructure',
-    IconComponent: DockerOriginal,
-  },
-  {
-    name: 'Kubernetes',
-    category: 'DevOps & Infrastructure',
-    IconComponent: KubernetesOriginal,
-  },
-  {
-    name: 'GitHub',
-    category: 'Developer Tools',
-    IconComponent: GithubOriginal,
-  },
-  { name: 'Git', category: 'Developer Tools', IconComponent: GitOriginal },
   {
     name: 'HTML',
     category: 'Languages',
+    level: 'primary',
     IconComponent: Html5Original,
   },
   {
     name: 'CSS',
     category: 'Languages',
+    level: 'primary',
     IconComponent: Css3Original,
   },
+
   {
-    name: 'Ubuntu',
-    category: 'DevOps & Infrastructure',
-    IconComponent: UbuntuOriginal,
-  },
-  {
-    name: 'Apollo GraphQL',
-    category: 'Frameworks & UI',
-    IconComponent: ApollographqlOriginal,
-  },
-  {
-    name: 'Redux',
-    category: 'Frameworks & UI',
-    IconComponent: ReduxOriginal,
-  },
-  {
-    name: 'Vite',
-    category: 'Developer Tools',
-    IconComponent: VitejsOriginal,
-  },
-  {
-    name: 'Tailwind',
-    category: 'Frameworks & UI',
-    IconComponent: TailwindcssOriginal,
-  },
-  {
-    name: 'GitHub Actions',
-    category: 'DevOps & Infrastructure',
-    IconComponent: GithubactionsOriginal,
-  },
-  {
-    name: 'Playwright',
-    category: 'Testing & Automation',
-    IconComponent: PlaywrightOriginal,
-  },
-  {
-    name: 'Pytest',
-    category: 'Testing & Automation',
-    IconComponent: PytestOriginal,
-  },
-  {
-    name: 'Poetry',
-    category: 'Developer Tools',
-    IconComponent: PoetryOriginal,
+    name: 'React',
+    category: 'Frontend',
+    level: 'primary',
+    IconComponent: ReactOriginal,
   },
   {
     name: 'Material UI',
-    category: 'Frameworks & UI',
+    category: 'Frontend',
+    level: 'primary',
     IconComponent: MaterialuiOriginal,
   },
   {
+    name: 'Redux',
+    category: 'Frontend',
+    level: 'familiar',
+    IconComponent: ReduxOriginal,
+  },
+  {
+    name: 'Tailwind',
+    category: 'Frontend',
+    level: 'familiar',
+    IconComponent: TailwindcssOriginal,
+  },
+  {
+    name: 'Next.js',
+    category: 'Frontend',
+    level: 'familiar',
+    IconComponent: NextjsPlain,
+    monochrome: true,
+  },
+  {
     name: 'React Native',
-    category: 'Frameworks & UI',
+    category: 'Frontend',
+    level: 'familiar',
     IconComponent: ReactnativeOriginal,
   },
   {
     name: 'Expo',
-    category: 'Developer Tools',
+    category: 'Frontend',
+    level: 'familiar',
     IconComponent: ExpoOriginal,
+    monochrome: true,
+  },
+
+  {
+    name: 'Node.js',
+    category: 'Backend',
+    level: 'primary',
+    IconComponent: NodejsOriginal,
+  },
+  {
+    name: 'Express',
+    category: 'Backend',
+    level: 'primary',
+    IconComponent: ExpressOriginal,
+    monochrome: true,
+  },
+  {
+    name: 'Flask',
+    category: 'Backend',
+    level: 'primary',
+    IconComponent: FlaskOriginal,
+    monochrome: true,
+  },
+  {
+    name: 'Django',
+    category: 'Backend',
+    level: 'familiar',
+    IconComponent: DjangoPlain,
+    monochrome: true,
+  },
+  {
+    name: 'Apollo GraphQL',
+    category: 'Backend',
+    level: 'familiar',
+    IconComponent: ApollographqlOriginal,
+    monochrome: true,
+  },
+
+  {
+    name: 'PostgreSQL',
+    category: 'Databases',
+    level: 'primary',
+    IconComponent: PostgresqlOriginal,
+  },
+  {
+    name: 'MongoDB',
+    category: 'Databases',
+    level: 'primary',
+    IconComponent: MongodbOriginal,
   },
   {
     name: 'SQLite',
     category: 'Databases',
+    level: 'primary',
     IconComponent: SqliteOriginal,
   },
   {
-    name: 'Postman',
-    category: 'Developer Tools',
-    IconComponent: PostmanOriginal,
+    name: 'Redis',
+    category: 'Databases',
+    level: 'primary',
+    IconComponent: RedisOriginal,
+  },
+
+  {
+    name: 'Docker',
+    category: 'DevOps & Cloud',
+    level: 'primary',
+    IconComponent: DockerOriginal,
+  },
+  {
+    name: 'GitHub Actions',
+    category: 'DevOps & Cloud',
+    level: 'primary',
+    IconComponent: GithubactionsOriginal,
+  },
+  {
+    name: 'Kubernetes',
+    category: 'DevOps & Cloud',
+    level: 'primary',
+    IconComponent: KubernetesOriginal,
   },
   {
     name: 'NGINX',
-    category: 'DevOps & Infrastructure',
+    category: 'DevOps & Cloud',
+    level: 'primary',
     IconComponent: NginxOriginal,
   },
   {
     name: 'Azure',
-    category: 'DevOps & Infrastructure',
+    category: 'DevOps & Cloud',
+    level: 'primary',
     IconComponent: AzureOriginal,
   },
   {
-    name: 'Eslint',
-    category: 'Developer Tools',
-    IconComponent: EslintOriginal,
+    name: 'AWS',
+    category: 'DevOps & Cloud',
+    level: 'primary',
+    IconComponent: AmazonwebservicesPlainWordmark,
+    monochrome: true,
   },
+
   {
-    name: 'Sequelize',
-    category: 'Frameworks & UI',
-    IconComponent: SequelizeOriginal,
+    name: 'Playwright',
+    category: 'Testing & Tooling',
+    level: 'primary',
+    IconComponent: PlaywrightOriginal,
   },
   {
     name: 'Vitest',
-    category: 'Testing & Automation',
+    category: 'Testing & Tooling',
+    level: 'primary',
     IconComponent: VitestOriginal,
   },
   {
-    name: 'VS Code',
-    category: 'Developer Tools',
-    IconComponent: VscodeOriginal,
+    name: 'Pytest',
+    category: 'Testing & Tooling',
+    level: 'primary',
+    IconComponent: PytestOriginal,
   },
   {
-    name: 'Next.js',
-    category: 'Frameworks & UI',
-    IconComponent: NextjsOriginal,
+    name: 'Vite',
+    category: 'Testing & Tooling',
+    level: 'primary',
+    IconComponent: VitejsOriginal,
   },
-]
+  {
+    name: 'Poetry',
+    category: 'Testing & Tooling',
+    level: 'primary',
+    IconComponent: PoetryOriginal,
+  },
+  {
+    name: 'Git',
+    category: 'Testing & Tooling',
+    level: 'primary',
+    IconComponent: GitOriginal,
+  },
+] as const satisfies readonly Skill[]
+
+export type SkillName = (typeof skillData)[number]['name']
+
+export const skillsByName = new Map<SkillName, Skill>(
+  skillData.map(skill => [skill.name, skill])
+)

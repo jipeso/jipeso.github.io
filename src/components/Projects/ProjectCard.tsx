@@ -7,7 +7,7 @@ import {
   Button,
 } from '@mui/material'
 import { type Project } from '../../types'
-import { skillData } from '../../data/skills'
+import { skillsByName } from '../../data/skills'
 import SkillItem from '../Skills/SkillItem'
 
 interface ProjectCardProps {
@@ -15,9 +15,10 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
-  const projectSkills = project.skills
-    ? skillData.filter(skill => project.skills?.includes(skill.name))
-    : []
+  const projectSkills = (project.skills ?? []).flatMap(name => {
+    const skill = skillsByName.get(name)
+    return skill ? [skill] : []
+  })
 
   return (
     <Card

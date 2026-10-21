@@ -1,4 +1,4 @@
-import { Box, Typography, Grid } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import type { Skill } from '../../types'
 import SkillItem from './SkillItem'
 
@@ -23,13 +23,11 @@ const CategoryCard = ({ title, skills }: CategoryCardProps) => {
         {title}
       </Typography>
 
-      <Grid container spacing={1}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
         {skills.map(skill => (
-          <Grid key={skill.name}>
-            <SkillItem skill={skill} />
-          </Grid>
+          <SkillItem key={skill.name} skill={skill} />
         ))}
-      </Grid>
+      </Box>
     </Box>
   )
 }

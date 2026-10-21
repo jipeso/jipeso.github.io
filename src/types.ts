@@ -1,17 +1,22 @@
 import { type ElementType } from 'react'
+import { type SkillName } from './data/skills'
 
 export type Category =
   | 'Languages'
-  | 'Frameworks & UI'
+  | 'Frontend'
+  | 'Backend'
   | 'Databases'
-  | 'DevOps & Infrastructure'
-  | 'Developer Tools'
-  | 'Testing & Automation'
+  | 'DevOps & Cloud'
+  | 'Testing & Tooling'
+
+export type Level = 'primary' | 'familiar'
 
 export interface Skill {
   name: string
   category: Category
+  level: Level
   IconComponent: ElementType
+  monochrome?: boolean
 }
 
 export interface Project {
@@ -21,7 +26,7 @@ export interface Project {
   production?: string
   link?: string
   image?: string
-  skills?: string[]
+  skills?: SkillName[]
 }
 export interface SocialsLink {
   title: string
