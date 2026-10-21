@@ -4,6 +4,9 @@ export const profile = {
   role: 'Full-stack developer',
   location: 'Helsinki, Finland',
   email: 'jipesonen@gmail.com',
+  url: 'https://jipeso.github.io/',
+  description:
+    "Computer Science Master's student specializing in modern web development with TypeScript and React. Explore my projects and skills.",
 }
 
 export const about = [

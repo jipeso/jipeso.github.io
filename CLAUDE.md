@@ -1,9 +1,9 @@
 # Portfolio
 
-React + TypeScript + Vite + MUI portfolio, deployed to GitHub Pages on push to `main`.
+React + TypeScript + Vite + MUI portfolio. CI (`.github/workflows/ci.yml`) runs the checks on every push and PR, and deploys to GitHub Pages from `main` only when they pass.
 
-- Content lives in `src/data/`. Components only render it.
-- Verify with `npm run build` and `npm run lint`. Format with `npm run format`.
+- Content lives in `src/data/`. Components only render it. `index.html` head tags are generated from it in `vite.config.ts`.
+- Verify with `npm run lint` (includes type-check), `npm test` and `npm run test:e2e` (Playwright + axe, builds first). Format with `npm run format`.
 
 ## Style
 

@@ -1,14 +1,11 @@
 import { alpha, createTheme } from '@mui/material/styles'
 
-const light = {
-  primary: '#B8862E',
-  text: '#1C1917',
+export const colors = {
+  light: { primary: '#9A6811', text: '#1C1917', background: '#FAF8F4' },
+  dark: { primary: '#D4A857', text: '#F2F0EB', background: '#0D0E12' },
 }
 
-const dark = {
-  primary: '#D4A857',
-  text: '#F2F0EB',
-}
+const { light, dark } = colors
 
 export const theme = createTheme({
   cssVariables: {
@@ -19,7 +16,7 @@ export const theme = createTheme({
     light: {
       palette: {
         primary: { main: light.primary },
-        background: { default: '#FAF8F4', paper: '#FFFFFF' },
+        background: { default: light.background, paper: '#FFFFFF' },
         text: { primary: light.text, secondary: '#78716C' },
         action: {
           hover: alpha(light.primary, 0.05),
@@ -30,7 +27,7 @@ export const theme = createTheme({
     dark: {
       palette: {
         primary: { main: dark.primary },
-        background: { default: '#0D0E12', paper: '#16181D' },
+        background: { default: dark.background, paper: '#16181D' },
         text: { primary: dark.text, secondary: '#9B9791' },
         action: {
           hover: alpha(dark.primary, 0.08),
@@ -68,6 +65,11 @@ export const theme = createTheme({
       defaultProps: { variant: 'outlined' },
       styleOverrides: {
         root: ({ theme }) => ({ padding: theme.spacing(2.5) }),
+      },
+    },
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: { subtitle1: 'p', subtitle2: 'p' },
       },
     },
     MuiTooltip: {
