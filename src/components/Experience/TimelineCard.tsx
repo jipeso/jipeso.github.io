@@ -1,5 +1,5 @@
-import { Box, Paper, Divider, Typography } from '@mui/material'
-import { type TimelineEntry } from '../../types'
+import { Box, Card, Divider, Typography } from '@mui/material'
+import { type TimelineEntry } from '../../data/experience'
 import BulletList from '../BulletList'
 
 interface TimelineCardProps {
@@ -8,7 +8,7 @@ interface TimelineCardProps {
 }
 
 const TimelineCard = ({ title, entries }: TimelineCardProps) => (
-  <Paper variant='outlined' sx={{ p: 2.5, borderRadius: 2 }}>
+  <Card>
     <Typography variant='overline' color='text.secondary'>
       {title}
     </Typography>
@@ -37,7 +37,7 @@ const TimelineCard = ({ title, entries }: TimelineCardProps) => (
         {entry.highlights && <BulletList items={entry.highlights} />}
       </Box>
     ))}
-  </Paper>
+  </Card>
 )
 
 export default TimelineCard

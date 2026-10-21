@@ -9,4 +9,3 @@ React + TypeScript + Vite + MUI portfolio, deployed to GitHub Pages on push to `
 
 - Minimal, clean, readable and maintainable code.
 - No comments: names and structure should make intent obvious.
-- Use theme tokens, not hard-coded colors.

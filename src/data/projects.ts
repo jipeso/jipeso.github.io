@@ -1,12 +1,22 @@
-import { type Project } from '../types'
-
 import newsArticlesImage from '../assets/articles-project.webp'
 import infoScreenImage from '../assets/infoscreen-project.webp'
 import bibtexProjectImage from '../assets/bibtex-project.webp'
 import itArkkitehtuuriImage from '../assets/it-arkkitehtuuri-project.webp'
 import duunitImage from '../assets/duunit-project.webp'
+import { type SkillName } from './skills'
 
-export const projectData: Project[] = [
+export interface Project {
+  title: string
+  company?: string
+  description: string
+  highlights?: string[]
+  production?: string
+  repository?: string
+  image: string
+  skills: SkillName[]
+}
+
+export const projects: Project[] = [
   {
     title: 'Duunit',
     company: 'University project',
@@ -17,7 +27,7 @@ export const projectData: Project[] = [
       'AI job description analysis using the OpenRouter API',
       'Automated release pipeline with end-to-end tests',
     ],
-    link: 'https://github.com/jipeso/duunit',
+    repository: 'https://github.com/jipeso/duunit',
     image: duunitImage,
     production: 'https://duunit.site',
     skills: [
@@ -68,7 +78,7 @@ export const projectData: Project[] = [
       'Built in a team of six',
       'Contributed to the production deployment, floor plan, backend and Microsoft Graph API integration for room availability',
     ],
-    link: 'https://github.com/Infopisteprojekti/infopiste',
+    repository: 'https://github.com/Infopisteprojekti/infopiste',
     image: infoScreenImage,
     skills: [
       'JavaScript',
@@ -94,7 +104,7 @@ export const projectData: Project[] = [
       'Built solo with a layered architecture',
       'Automated tests and CI with coverage reporting',
     ],
-    link: 'https://github.com/jipeso/ohjelmistotekniikka',
+    repository: 'https://github.com/jipeso/ohjelmistotekniikka',
     image: newsArticlesImage,
     skills: ['Python', 'Flask', 'Poetry', 'SQLite', 'Pytest', 'GitHub Actions'],
   },
@@ -108,7 +118,7 @@ export const projectData: Project[] = [
       'Contributed to frontend development',
       'Automated tests and CI with coverage reporting',
     ],
-    link: 'https://github.com/ruokokoski/ohtu-miniprojekti',
+    repository: 'https://github.com/ruokokoski/ohtu-miniprojekti',
     image: bibtexProjectImage,
     skills: [
       'Python',

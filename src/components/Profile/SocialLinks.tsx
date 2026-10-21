@@ -1,39 +1,36 @@
-import { Stack, Tooltip, IconButton } from '@mui/material'
-import { socialsData } from '../../data/socials'
+import {
+  Stack,
+  Tooltip,
+  IconButton,
+  type SxProps,
+  type Theme,
+} from '@mui/material'
+import { socials } from '../../data/socials'
 import CopyEmailButton from './CopyEmailButton'
 
-const iconButtonSx = {
+const iconButtonSx: SxProps<Theme> = {
   border: '1px solid',
   borderColor: 'divider',
-  transition: 'all 0.3s ease-in-out',
+  transition: theme => theme.transitions.create(['color', 'background-color']),
   '&:hover': { color: 'primary.main' },
 }
 
-const SocialLinks = () => {
-  return (
-    <Stack direction='row' spacing={1.5} sx={{ pt: 2 }}>
-      {socialsData.map(({ title, link, icon: Icon, label }) => (
-        <Tooltip
-          key={title}
-          title={title}
-          arrow
-          enterDelay={300}
-          enterNextDelay={300}
+const SocialLinks = () => (
+  <Stack direction='row' spacing={1.5} sx={{ pt: 2 }}>
+    {socials.map(({ title, link, Icon }) => (
+      <Tooltip key={title} title={title}>
+        <IconButton
+          href={link}
+          target='_blank'
+          rel='noopener noreferrer'
+          sx={iconButtonSx}
         >
-          <IconButton
-            href={link}
-            target='_blank'
-            rel='noopener noreferrer'
-            aria-label={label}
-            sx={iconButtonSx}
-          >
-            <Icon />
-          </IconButton>
-        </Tooltip>
-      ))}
-      <CopyEmailButton sx={iconButtonSx} />
-    </Stack>
-  )
-}
+          <Icon />
+        </IconButton>
+      </Tooltip>
+    ))}
+    <CopyEmailButton sx={iconButtonSx} />
+  </Stack>
+)
 
 export default SocialLinks

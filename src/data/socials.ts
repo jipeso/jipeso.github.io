@@ -1,21 +1,22 @@
+import { type ElementType } from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 
-import { type SocialsLink } from '../types'
+export interface SocialLink {
+  title: string
+  link: string
+  Icon: ElementType
+}
 
-export const socialsData: SocialsLink[] = [
+export const socials: SocialLink[] = [
   {
     title: 'GitHub',
     link: 'https://github.com/jipeso',
-    icon: GitHubIcon,
-    label: 'Link to GitHub page',
+    Icon: GitHubIcon,
   },
   {
     title: 'LinkedIn',
     link: 'https://www.linkedin.com/in/joni-pesonen-876b9224b',
-    icon: LinkedInIcon,
-    label: 'Link to LinkedIn Profile',
+    Icon: LinkedInIcon,
   },
 ]
-
-export const email = 'jipesonen@gmail.com'

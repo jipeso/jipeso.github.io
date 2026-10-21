@@ -1,19 +1,15 @@
-import { Box, Container, Stack, Typography } from '@mui/material'
-import { educationData, workData } from '../../data/experience'
+import { Stack } from '@mui/material'
+import { education, work } from '../../data/experience'
+import Section from '../Section'
 import TimelineCard from './TimelineCard'
 
 const Experience = () => (
-  <Box component='section' id='experience' sx={{ scrollMarginTop: '60px' }}>
-    <Container maxWidth='md'>
-      <Typography variant='h2' sx={{ mb: 2 }}>
-        Experience
-      </Typography>
-      <Stack spacing={3}>
-        <TimelineCard title='Work' entries={workData} />
-        <TimelineCard title='Education' entries={educationData} />
-      </Stack>
-    </Container>
-  </Box>
+  <Section id='experience'>
+    <Stack spacing={3}>
+      <TimelineCard title='Work' entries={work} />
+      <TimelineCard title='Education' entries={education} />
+    </Stack>
+  </Section>
 )
 
 export default Experience

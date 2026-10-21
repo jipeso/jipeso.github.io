@@ -1,6 +1,11 @@
-import { type TimelineEntry } from '../types'
+export interface TimelineEntry {
+  title: string
+  organization: string
+  period: string
+  highlights?: string[]
+}
 
-export const workData: TimelineEntry[] = [
+export const work: TimelineEntry[] = [
   {
     title: 'Software Developer Intern',
     organization: '2M-IT Oy',
@@ -12,7 +17,7 @@ export const workData: TimelineEntry[] = [
   },
 ]
 
-export const educationData: TimelineEntry[] = [
+export const education: TimelineEntry[] = [
   {
     title: 'MSc, Computer Science',
     organization: 'University of Helsinki',

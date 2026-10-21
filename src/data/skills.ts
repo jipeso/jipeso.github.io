@@ -1,3 +1,4 @@
+import { type ElementType } from 'react'
 import ReactOriginal from 'devicons-react/icons/ReactOriginal'
 import PythonOriginal from 'devicons-react/icons/PythonOriginal'
 import FlaskOriginal from 'devicons-react/icons/FlaskOriginal'
@@ -32,232 +33,78 @@ import AmazonwebservicesPlainWordmark from 'devicons-react/icons/Amazonwebservic
 import PytestOriginal from 'devicons-react/icons/PytestOriginal'
 import VitestOriginal from 'devicons-react/icons/VitestOriginal'
 
-import { type Category, type Skill } from '../types'
+export interface Skill {
+  name: string
+  Icon: ElementType
+  familiar?: boolean
+  monochrome?: boolean
+}
 
-export const CATEGORIES: Category[] = [
-  'Languages',
-  'Frontend',
-  'Backend',
-  'Databases',
-  'DevOps & Cloud',
-  'Testing & Tooling',
-]
+export const skillsByCategory = {
+  Languages: [
+    { name: 'TypeScript', Icon: TypescriptOriginal },
+    { name: 'JavaScript', Icon: JavascriptOriginal },
+    { name: 'Python', Icon: PythonOriginal },
+    { name: 'HTML', Icon: Html5Original },
+    { name: 'CSS', Icon: Css3Original },
+  ],
+  Frontend: [
+    { name: 'React', Icon: ReactOriginal },
+    { name: 'Material UI', Icon: MaterialuiOriginal },
+    { name: 'Redux', Icon: ReduxOriginal, familiar: true },
+    { name: 'Tailwind', Icon: TailwindcssOriginal, familiar: true },
+    { name: 'Next.js', Icon: NextjsPlain, familiar: true, monochrome: true },
+    { name: 'React Native', Icon: ReactnativeOriginal, familiar: true },
+    { name: 'Expo', Icon: ExpoOriginal, familiar: true, monochrome: true },
+  ],
+  Backend: [
+    { name: 'Node.js', Icon: NodejsOriginal },
+    { name: 'Express', Icon: ExpressOriginal, monochrome: true },
+    { name: 'Flask', Icon: FlaskOriginal, monochrome: true },
+    { name: 'Django', Icon: DjangoPlain, familiar: true, monochrome: true },
+    {
+      name: 'Apollo GraphQL',
+      Icon: ApollographqlOriginal,
+      familiar: true,
+      monochrome: true,
+    },
+  ],
+  Databases: [
+    { name: 'PostgreSQL', Icon: PostgresqlOriginal },
+    { name: 'MongoDB', Icon: MongodbOriginal },
+    { name: 'SQLite', Icon: SqliteOriginal },
+    { name: 'Redis', Icon: RedisOriginal },
+  ],
+  'DevOps & Cloud': [
+    { name: 'Docker', Icon: DockerOriginal },
+    { name: 'GitHub Actions', Icon: GithubactionsOriginal },
+    { name: 'Kubernetes', Icon: KubernetesOriginal },
+    { name: 'NGINX', Icon: NginxOriginal },
+    { name: 'Azure', Icon: AzureOriginal },
+    { name: 'AWS', Icon: AmazonwebservicesPlainWordmark, monochrome: true },
+  ],
+  'Testing & Tooling': [
+    { name: 'Playwright', Icon: PlaywrightOriginal },
+    { name: 'Vitest', Icon: VitestOriginal },
+    { name: 'Pytest', Icon: PytestOriginal },
+    { name: 'Vite', Icon: VitejsOriginal },
+    { name: 'Poetry', Icon: PoetryOriginal },
+    { name: 'Git', Icon: GitOriginal },
+  ],
+} as const satisfies Record<string, readonly Skill[]>
 
-export const skillData = [
-  {
-    name: 'TypeScript',
-    category: 'Languages',
-    level: 'primary',
-    IconComponent: TypescriptOriginal,
-  },
-  {
-    name: 'JavaScript',
-    category: 'Languages',
-    level: 'primary',
-    IconComponent: JavascriptOriginal,
-  },
-  {
-    name: 'Python',
-    category: 'Languages',
-    level: 'primary',
-    IconComponent: PythonOriginal,
-  },
-  {
-    name: 'HTML',
-    category: 'Languages',
-    level: 'primary',
-    IconComponent: Html5Original,
-  },
-  {
-    name: 'CSS',
-    category: 'Languages',
-    level: 'primary',
-    IconComponent: Css3Original,
-  },
+export type SkillName =
+  (typeof skillsByCategory)[keyof typeof skillsByCategory][number]['name']
 
-  {
-    name: 'React',
-    category: 'Frontend',
-    level: 'primary',
-    IconComponent: ReactOriginal,
-  },
-  {
-    name: 'Material UI',
-    category: 'Frontend',
-    level: 'primary',
-    IconComponent: MaterialuiOriginal,
-  },
-  {
-    name: 'Redux',
-    category: 'Frontend',
-    level: 'familiar',
-    IconComponent: ReduxOriginal,
-  },
-  {
-    name: 'Tailwind',
-    category: 'Frontend',
-    level: 'familiar',
-    IconComponent: TailwindcssOriginal,
-  },
-  {
-    name: 'Next.js',
-    category: 'Frontend',
-    level: 'familiar',
-    IconComponent: NextjsPlain,
-    monochrome: true,
-  },
-  {
-    name: 'React Native',
-    category: 'Frontend',
-    level: 'familiar',
-    IconComponent: ReactnativeOriginal,
-  },
-  {
-    name: 'Expo',
-    category: 'Frontend',
-    level: 'familiar',
-    IconComponent: ExpoOriginal,
-    monochrome: true,
-  },
+export const skillCategories: [string, readonly Skill[]][] =
+  Object.entries(skillsByCategory)
 
-  {
-    name: 'Node.js',
-    category: 'Backend',
-    level: 'primary',
-    IconComponent: NodejsOriginal,
-  },
-  {
-    name: 'Express',
-    category: 'Backend',
-    level: 'primary',
-    IconComponent: ExpressOriginal,
-    monochrome: true,
-  },
-  {
-    name: 'Flask',
-    category: 'Backend',
-    level: 'primary',
-    IconComponent: FlaskOriginal,
-    monochrome: true,
-  },
-  {
-    name: 'Django',
-    category: 'Backend',
-    level: 'familiar',
-    IconComponent: DjangoPlain,
-    monochrome: true,
-  },
-  {
-    name: 'Apollo GraphQL',
-    category: 'Backend',
-    level: 'familiar',
-    IconComponent: ApollographqlOriginal,
-    monochrome: true,
-  },
+const allSkills: Skill[] = Object.values(skillsByCategory).flat()
 
-  {
-    name: 'PostgreSQL',
-    category: 'Databases',
-    level: 'primary',
-    IconComponent: PostgresqlOriginal,
-  },
-  {
-    name: 'MongoDB',
-    category: 'Databases',
-    level: 'primary',
-    IconComponent: MongodbOriginal,
-  },
-  {
-    name: 'SQLite',
-    category: 'Databases',
-    level: 'primary',
-    IconComponent: SqliteOriginal,
-  },
-  {
-    name: 'Redis',
-    category: 'Databases',
-    level: 'primary',
-    IconComponent: RedisOriginal,
-  },
+export const familiarSkills = allSkills
+  .filter(skill => skill.familiar)
+  .sort((a, b) => a.name.localeCompare(b.name))
 
-  {
-    name: 'Docker',
-    category: 'DevOps & Cloud',
-    level: 'primary',
-    IconComponent: DockerOriginal,
-  },
-  {
-    name: 'GitHub Actions',
-    category: 'DevOps & Cloud',
-    level: 'primary',
-    IconComponent: GithubactionsOriginal,
-  },
-  {
-    name: 'Kubernetes',
-    category: 'DevOps & Cloud',
-    level: 'primary',
-    IconComponent: KubernetesOriginal,
-  },
-  {
-    name: 'NGINX',
-    category: 'DevOps & Cloud',
-    level: 'primary',
-    IconComponent: NginxOriginal,
-  },
-  {
-    name: 'Azure',
-    category: 'DevOps & Cloud',
-    level: 'primary',
-    IconComponent: AzureOriginal,
-  },
-  {
-    name: 'AWS',
-    category: 'DevOps & Cloud',
-    level: 'primary',
-    IconComponent: AmazonwebservicesPlainWordmark,
-    monochrome: true,
-  },
-
-  {
-    name: 'Playwright',
-    category: 'Testing & Tooling',
-    level: 'primary',
-    IconComponent: PlaywrightOriginal,
-  },
-  {
-    name: 'Vitest',
-    category: 'Testing & Tooling',
-    level: 'primary',
-    IconComponent: VitestOriginal,
-  },
-  {
-    name: 'Pytest',
-    category: 'Testing & Tooling',
-    level: 'primary',
-    IconComponent: PytestOriginal,
-  },
-  {
-    name: 'Vite',
-    category: 'Testing & Tooling',
-    level: 'primary',
-    IconComponent: VitejsOriginal,
-  },
-  {
-    name: 'Poetry',
-    category: 'Testing & Tooling',
-    level: 'primary',
-    IconComponent: PoetryOriginal,
-  },
-  {
-    name: 'Git',
-    category: 'Testing & Tooling',
-    level: 'primary',
-    IconComponent: GitOriginal,
-  },
-] as const satisfies readonly Skill[]
-
-export type SkillName = (typeof skillData)[number]['name']
-
-export const skillsByName = new Map<SkillName, Skill>(
-  skillData.map(skill => [skill.name, skill])
-)
+export const skillsByName = Object.fromEntries(
+  allSkills.map(skill => [skill.name, skill])
+) as Record<SkillName, Skill>

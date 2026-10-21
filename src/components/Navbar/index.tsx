@@ -5,33 +5,38 @@ import {
   Toolbar,
   Typography,
   Box,
+  Button,
   Drawer,
+  Link,
   List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
   useColorScheme,
   Divider,
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
-
-import NavLinks from './NavLinks'
+import { profile } from '../../data/profile'
+import { sections } from '../../data/sections'
 
 const DRAWER_WIDTH = 140
 
+const navItems = Object.entries(sections).map(([id, { label }]) => ({
+  href: `#${id}`,
+  label,
+}))
+
 const Navbar = () => {
-  const { mode, setMode } = useColorScheme()
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const { mode, systemMode, setMode } = useColorScheme()
+  const [drawerOpen, setDrawerOpen] = useState(false)
 
-  const toggleTheme = () => setMode(mode === 'light' ? 'dark' : 'light')
-  const handleDrawerToggle = () => setMobileOpen(prev => !prev)
+  const colorScheme = mode === 'system' ? systemMode : mode
+  const nextColorScheme = colorScheme === 'light' ? 'dark' : 'light'
 
-  const handleNavClick = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ block: 'start' })
-  }
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0 })
-  }
+  const openDrawer = () => setDrawerOpen(true)
+  const closeDrawer = () => setDrawerOpen(false)
 
   return (
     <>
@@ -45,45 +50,48 @@ const Navbar = () => {
         <Toolbar>
           <IconButton
             edge='start'
-            onClick={handleDrawerToggle}
+            onClick={openDrawer}
             sx={{ mr: 2, display: { sm: 'none' } }}
             aria-label='open navigation menu'
           >
             <MenuIcon />
           </IconButton>
 
-          <Typography
+          <Link
+            href='#'
             variant='subtitle1'
-            onClick={scrollToTop}
-            sx={{
-              cursor: 'pointer',
-              userSelect: 'none',
-              fontFamily: 'monospace',
-            }}
+            color='inherit'
+            underline='none'
+            sx={{ fontFamily: 'monospace' }}
           >
-            {'[jipeso]'}
-          </Typography>
+            [{profile.handle}]
+          </Link>
 
           <Box sx={{ flexGrow: 1 }} />
 
           <Box sx={{ display: { xs: 'none', sm: 'block' }, mr: 2 }}>
-            <NavLinks onItemClick={handleNavClick} />
+            {navItems.map(({ href, label }) => (
+              <Button key={href} href={href} color='inherit'>
+                {label}
+              </Button>
+            ))}
           </Box>
 
           <IconButton
-            onClick={toggleTheme}
+            onClick={() => setMode(nextColorScheme)}
             color='inherit'
-            aria-label={`switch to ${mode === 'light' ? 'dark' : 'light'} mode`}
+            aria-label={`switch to ${nextColorScheme} mode`}
           >
-            {mode === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
+            {nextColorScheme === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
           </IconButton>
         </Toolbar>
       </AppBar>
 
       <Drawer
         variant='temporary'
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
+        open={drawerOpen}
+        onClose={closeDrawer}
+        disableScrollLock
         ModalProps={{ keepMounted: true }}
         slotProps={{ backdrop: { sx: { backdropFilter: 'blur(4px)' } } }}
         sx={{
@@ -94,13 +102,23 @@ const Navbar = () => {
           },
         }}
       >
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', pt: 2 }}>
+        <Box onClick={closeDrawer} sx={{ textAlign: 'center', pt: 2 }}>
           <Typography variant='subtitle1' sx={{ mb: 2 }}>
             MENU
           </Typography>
           <Divider />
           <List>
-            <NavLinks onItemClick={handleNavClick} isMobile />
+            {navItems.map(({ href, label }) => (
+              <ListItem key={href} disablePadding>
+                <ListItemButton
+                  component='a'
+                  href={href}
+                  sx={{ textAlign: 'center' }}
+                >
+                  <ListItemText primary={label} />
+                </ListItemButton>
+              </ListItem>
+            ))}
           </List>
         </Box>
       </Drawer>

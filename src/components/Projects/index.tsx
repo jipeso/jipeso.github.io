@@ -1,24 +1,16 @@
-import { Container, Grid, Box, Typography } from '@mui/material'
-import { projectData } from '../../data/projects'
+import { Stack } from '@mui/material'
+import { projects } from '../../data/projects'
+import Section from '../Section'
 import ProjectCard from './ProjectCard'
 
-const Projects = () => {
-  return (
-    <Box component='section' id='projects' sx={{ scrollMarginTop: '60px' }}>
-      <Container maxWidth='md'>
-        <Typography variant='h2' sx={{ mb: 2 }}>
-          Featured projects
-        </Typography>
-        <Grid container spacing={4}>
-          {projectData.map((project, index) => (
-            <Grid key={index} size={12}>
-              <ProjectCard project={project} />
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </Box>
-  )
-}
+const Projects = () => (
+  <Section id='projects'>
+    <Stack spacing={4}>
+      {projects.map(project => (
+        <ProjectCard key={project.title} project={project} />
+      ))}
+    </Stack>
+  </Section>
+)
 
 export default Projects

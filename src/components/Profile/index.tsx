@@ -1,8 +1,9 @@
 import { Box, Container, Stack, Typography, Avatar } from '@mui/material'
 import LocationPinIcon from '@mui/icons-material/LocationPin'
 
+import { profile } from '../../data/profile'
+import profileImage from '../../assets/profile-image.webp'
 import SocialLinks from './SocialLinks'
-import profileImg from '../../assets/profile-image.webp'
 
 const Profile = () => {
   return (
@@ -20,8 +21,8 @@ const Profile = () => {
               pt: { xs: 3, sm: 0 },
             }}
           >
-            <Typography variant='h1'>Joni Pesonen</Typography>
-            <Typography color='text.secondary'>Full-stack developer</Typography>
+            <Typography variant='h1'>{profile.name}</Typography>
+            <Typography color='text.secondary'>{profile.role}</Typography>
 
             <Stack
               direction='row'
@@ -30,15 +31,15 @@ const Profile = () => {
               sx={{ color: 'text.secondary' }}
             >
               <LocationPinIcon />
-              <Typography>Helsinki, Finland</Typography>
+              <Typography>{profile.location}</Typography>
             </Stack>
 
             <SocialLinks />
           </Stack>
 
           <Avatar
-            src={profileImg}
-            alt='Joni Pesonen'
+            src={profileImage}
+            alt={profile.name}
             sx={{
               width: 180,
               height: 180,
