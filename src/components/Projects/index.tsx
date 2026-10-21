@@ -11,7 +11,7 @@ const Projects = () => {
         </Typography>
         <Grid container spacing={4}>
           {projectData.map((project, index) => (
-            <Grid key={index} size={{ xs: 12, sm: 12, md: 12 }}>
+            <Grid key={index} size={12}>
               <ProjectCard project={project} />
             </Grid>
           ))}

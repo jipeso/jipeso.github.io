@@ -1,6 +1,6 @@
 import { Button, ListItem, ListItemText, ListItemButton } from '@mui/material'
 
-const NAV_ITEMS = ['about', 'skills', 'projects']
+const NAV_ITEMS = ['about', 'skills', 'experience', 'projects']
 
 interface NavLinkProps {
   onItemClick: (id: string) => void
@@ -20,15 +20,7 @@ const NavLinks = ({ onItemClick, isMobile = false }: NavLinkProps) => (
           </ListItemButton>
         </ListItem>
       ) : (
-        <Button
-          key={item}
-          color='inherit'
-          onClick={() => onItemClick(item)}
-          sx={{
-            textTransform: 'uppercase',
-            color: 'text.primary',
-          }}
-        >
+        <Button key={item} color='inherit' onClick={() => onItemClick(item)}>
           {item}
         </Button>
       )

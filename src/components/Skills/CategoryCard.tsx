@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Paper, Typography } from '@mui/material'
 import type { Skill } from '../../types'
 import SkillItem from './SkillItem'
 
@@ -9,16 +9,7 @@ interface CategoryCardProps {
 
 const CategoryCard = ({ title, skills }: CategoryCardProps) => {
   return (
-    <Box
-      sx={{
-        p: 1.5,
-        border: '1px solid',
-        borderRadius: 2,
-        borderColor: 'divider',
-        backgroundColor: 'background.paper',
-        height: '100%',
-      }}
-    >
+    <Paper variant='outlined' sx={{ p: 2.5, borderRadius: 2, height: '100%' }}>
       <Typography variant='h3' gutterBottom>
         {title}
       </Typography>
@@ -28,7 +19,7 @@ const CategoryCard = ({ title, skills }: CategoryCardProps) => {
           <SkillItem key={skill.name} skill={skill} />
         ))}
       </Box>
-    </Box>
+    </Paper>
   )
 }
 

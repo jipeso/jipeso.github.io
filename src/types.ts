@@ -29,6 +29,13 @@ export interface Project {
   image?: string
   skills?: SkillName[]
 }
+export interface TimelineEntry {
+  title: string
+  organization: string
+  period: string
+  highlights?: string[]
+}
+
 export interface SocialsLink {
   title: string
   link: string

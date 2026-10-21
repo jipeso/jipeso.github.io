@@ -6,6 +6,7 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Footer from './components/Footer'
 import About from './components/About'
+import Experience from './components/Experience'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Profile />
         <About />
         <Skills />
+        <Experience />
         <Projects />
       </Stack>
       <Footer />

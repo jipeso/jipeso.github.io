@@ -9,6 +9,7 @@ import {
 import { type Project } from '../../types'
 import { skillsByName } from '../../data/skills'
 import SkillItem from '../Skills/SkillItem'
+import BulletList from '../BulletList'
 
 interface ProjectCardProps {
   project: Project
@@ -22,18 +23,16 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <Card
-      elevation={0}
+      variant='outlined'
       sx={{
-        p: 2,
+        p: 2.5,
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        border: '1px solid',
-        borderColor: 'divider',
         borderRadius: 2,
       }}
     >
-      <CardContent sx={{ flexGrow: 1, p: 2 }}>
+      <CardContent sx={{ flexGrow: 1, p: 0 }}>
         <Box
           sx={{
             mb: 0.75,
@@ -55,9 +54,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           image={project.image}
           alt={project.title}
           sx={{
-            width: '100%',
             aspectRatio: '16 / 9',
-            objectFit: 'cover',
             borderRadius: 2,
             border: '1px solid',
             borderColor: 'divider',
@@ -65,26 +62,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           }}
         />
         <Typography color='text.secondary'>{project.description}</Typography>
-        {project.highlights && (
-          <Box component='ul' sx={{ mt: 1.5, mb: 0, pl: 2.5 }}>
-            {project.highlights.map(highlight => (
-              <Typography
-                key={highlight}
-                component='li'
-                color='text.secondary'
-                sx={{ mb: 0.5 }}
-              >
-                {highlight}
-              </Typography>
-            ))}
-          </Box>
-        )}
+        {project.highlights && <BulletList items={project.highlights} />}
       </CardContent>
       <Box
         sx={{
           mt: 'auto',
-          px: 2,
-          pb: 2,
+          pt: 2,
           display: 'flex',
           flexDirection: { xs: 'column', sm: 'row' },
           alignItems: { xs: 'flex-start', sm: 'flex-end' },

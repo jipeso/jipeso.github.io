@@ -38,18 +38,15 @@ const Navbar = () => {
       <AppBar
         component='nav'
         position='sticky'
+        color='inherit'
         elevation={0}
-        sx={{
-          borderBottom: '1px solid',
-          borderColor: 'divider',
-          bgcolor: 'background.paper',
-        }}
+        sx={{ borderBottom: '1px solid', borderColor: 'divider' }}
       >
         <Toolbar>
           <IconButton
             edge='start'
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' }, color: 'text.primary' }}
+            sx={{ mr: 2, display: { sm: 'none' } }}
             aria-label='open navigation menu'
           >
             <MenuIcon />
@@ -57,7 +54,6 @@ const Navbar = () => {
 
           <Typography
             variant='subtitle1'
-            color='text.primary'
             onClick={scrollToTop}
             sx={{
               cursor: 'pointer',
@@ -77,7 +73,6 @@ const Navbar = () => {
           <IconButton
             onClick={toggleTheme}
             color='inherit'
-            sx={{ color: 'text.primary' }}
             aria-label={`switch to ${mode === 'light' ? 'dark' : 'light'} mode`}
           >
             {mode === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
