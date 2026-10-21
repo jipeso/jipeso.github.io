@@ -32,7 +32,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       >
         <Typography variant='h3'>{project.title}</Typography>
         {project.company && (
-          <Typography variant='subtitle2' color='text.secondary'>
+          <Typography variant='subtitle2' color='textSecondary'>
             {project.company}
           </Typography>
         )}
@@ -51,7 +51,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           mb: 2,
         }}
       />
-      <Typography color='text.secondary'>{project.description}</Typography>
+      <Typography color='textSecondary'>{project.description}</Typography>
       {project.highlights && <BulletList items={project.highlights} />}
       <Box
         sx={{
@@ -67,7 +67,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         <Box>
           <Typography
             variant='caption'
-            color='text.secondary'
+            color='textSecondary'
             sx={{ mb: 1, display: 'block' }}
           >
             Key technologies:

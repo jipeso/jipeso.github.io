@@ -23,7 +23,7 @@ const Skills = () => (
 
     {familiarSkills.length > 0 && (
       <Box sx={{ mt: 3 }}>
-        <Typography variant='subtitle1' color='text.secondary' sx={{ mb: 1 }}>
+        <Typography variant='subtitle1' color='textSecondary' sx={{ mb: 1 }}>
           Also familiar with
         </Typography>
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>

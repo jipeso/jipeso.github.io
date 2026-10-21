@@ -6,7 +6,7 @@ const currentYear = new Date().getFullYear()
 const Footer = () => {
   return (
     <Box component='footer' sx={{ py: 10 }}>
-      <Typography variant='body2' align='center' color='text.secondary'>
+      <Typography variant='body2' align='center' color='textSecondary'>
         © {currentYear} {profile.name}. Made with React + Vite.
       </Typography>
     </Box>

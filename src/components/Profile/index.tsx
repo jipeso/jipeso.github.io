@@ -12,7 +12,7 @@ const Profile = () => {
         <Stack
           direction={{ xs: 'column', sm: 'row' }}
           spacing={{ sm: 14 }}
-          alignItems='center'
+          sx={{ alignItems: 'center' }}
         >
           <Stack
             spacing={1}
@@ -22,13 +22,12 @@ const Profile = () => {
             }}
           >
             <Typography variant='h1'>{profile.name}</Typography>
-            <Typography color='text.secondary'>{profile.role}</Typography>
+            <Typography color='textSecondary'>{profile.role}</Typography>
 
             <Stack
               direction='row'
-              alignItems='center'
               spacing={0.5}
-              sx={{ color: 'text.secondary' }}
+              sx={{ alignItems: 'center', color: 'text.secondary' }}
             >
               <LocationPinIcon />
               <Typography>{profile.location}</Typography>

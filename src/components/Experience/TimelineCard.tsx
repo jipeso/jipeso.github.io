@@ -9,7 +9,7 @@ interface TimelineCardProps {
 
 const TimelineCard = ({ title, entries }: TimelineCardProps) => (
   <Card>
-    <Typography variant='overline' color='text.secondary'>
+    <Typography variant='overline' color='textSecondary'>
       {title}
     </Typography>
     {entries.map((entry, index) => (
@@ -27,13 +27,13 @@ const TimelineCard = ({ title, entries }: TimelineCardProps) => (
           <Typography variant='h3'>{entry.title}</Typography>
           <Typography
             variant='body2'
-            color='text.secondary'
+            color='textSecondary'
             sx={{ flexShrink: 0 }}
           >
             {entry.period}
           </Typography>
         </Box>
-        <Typography color='primary.main'>{entry.organization}</Typography>
+        <Typography color='primary'>{entry.organization}</Typography>
         {entry.highlights && <BulletList items={entry.highlights} />}
       </Box>
     ))}

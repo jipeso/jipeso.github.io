@@ -14,7 +14,7 @@ const About = () => (
   <Section id='about'>
     <Stack spacing={2} sx={{ maxWidth: '65ch' }}>
       {about.map(paragraph => (
-        <Typography key={paragraph} color='text.secondary'>
+        <Typography key={paragraph} color='textSecondary'>
           {withHighlights(paragraph)}
         </Typography>
       ))}

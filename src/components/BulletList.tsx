@@ -10,7 +10,7 @@ const BulletList = ({ items }: BulletListProps) => (
       <Typography
         key={item}
         component='li'
-        color='text.secondary'
+        color='textSecondary'
         sx={{ mb: 0.5 }}
       >
         {item}
