@@ -19,6 +19,8 @@ const Profile = () => {
             sx={{
               order: { xs: 2, sm: 1 },
               pt: { xs: 3, sm: 0 },
+              alignItems: { xs: 'center', sm: 'flex-start' },
+              textAlign: { xs: 'center', sm: 'left' },
             }}
           >
             <Typography variant='h1'>{profile.name}</Typography>

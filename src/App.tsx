@@ -10,7 +10,7 @@ import Footer from './components/Footer'
 const App = () => (
   <ThemeProvider theme={theme}>
     <CssBaseline />
-    <Stack component='main' spacing={6} sx={{ pt: { xs: 4, sm: 8 } }}>
+    <Stack component='main' spacing={6} sx={{ pt: 8 }}>
       <Profile />
       <About />
       <Skills />
