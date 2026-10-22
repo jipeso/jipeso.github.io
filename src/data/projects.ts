@@ -1,5 +1,5 @@
 import newsArticlesImage from '../assets/articles-project.webp'
-import infoScreenImage from '../assets/infoscreen-project.webp'
+import infopisteImage from '../assets/infopiste-project.webp'
 import bibtexProjectImage from '../assets/bibtex-project.webp'
 import itArkkitehtuuriTableImage from '../assets/it-arkkitehtuuri-table-view.webp'
 import itArkkitehtuuriDiagramImage from '../assets/it-arkkitehtuuri-diagram-builder.webp'
@@ -27,6 +27,7 @@ export interface Project {
   repository?: string
   screenshots: Screenshot[]
   skills: SkillName[]
+  fi?: Pick<Project, 'description' | 'highlights'>
 }
 
 export const projects: Project[] = [
@@ -70,13 +71,22 @@ export const projects: Project[] = [
       'AWS',
       'Playwright',
     ],
+    fi: {
+      description:
+        'Työnhakusovellus hakemusten, haastattelujen ja määräaikojen seurantaan sekä työnhaun tilastoihin. Tekoäly täyttää hakemuslomakkeen liitetyn työpaikkailmoituksen pohjalta.',
+      highlights: [
+        'Tein yksin omaa työnhakuani varten Full Stack Open -kurssin projektina (10 op)',
+        'Tekoälyn vastaus pakotetaan JSON-skeemaan, joka generoidaan sovelluksen jaetuista Zod-tyypeistä, ja työpaikkailmoitusta käsitellään pelkkänä datana prompt injectionin estämiseksi',
+        'Automatisoitu julkaisuputki ja end-to-end-testit',
+      ],
+    },
   },
   {
     title: 'IT-Arkkitehtuuri',
     year: 2026,
     company: '2M-IT Oy',
     description:
-      'Customer tool for searching and browsing IT architecture data synchronized from the ServiceNow REST API: thousands of systems and the relationships between them.',
+      'Customer tool for searching and browsing IT architecture data synchronized from the ServiceNow REST API: 3000+ systems and 6000+ relationships between them.',
     highlights: [
       'Built solo during my internship, from architecture to deployment',
       'Diagram builder: from any system, draw everything related to it based on the relationship data',
@@ -100,7 +110,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: 'Infoscreen',
+    title: 'Infopiste',
     year: 2025,
     onCv: true,
     company: 'University project',
@@ -112,7 +122,16 @@ export const projects: Project[] = [
       'Also worked on the backend and the production deployment',
     ],
     repository: 'https://github.com/Infopisteprojekti/infopiste',
-    screenshots: [{ src: infoScreenImage }],
+    screenshots: [{ src: infopisteImage }],
+    fi: {
+      description:
+        'Infonäyttö Helsingin yliopiston Exactum-rakennukseen: interaktiivinen pohjapiirros, huoneiden reaaliaikainen varaustilanne, PDF-ilmoitustaulu ja kampusravintoloiden ruokalistat.',
+      highlights: [
+        'Toteutettu kuuden hengen tiimissä',
+        'Toin huoneiden reaaliaikaisen varaustilanteen SVG-pohjapiirrokseen Microsoft Graph API:lla',
+        'Osallistuin myös backendin ja tuotantoympäristön toteutukseen',
+      ],
+    },
     skills: [
       'JavaScript',
       'React',

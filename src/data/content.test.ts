@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { cvs } from './cvContent'
 import { education, work } from './experience'
 import { projects } from './projects'
 import { familiarSkills, skillCategories } from './skills'
@@ -22,6 +23,25 @@ describe('content', () => {
 
   it('puts projects on the CV', () => {
     expect(projects.some(project => project.onCv)).toBe(true)
+  })
+
+  it('translates every CV project', () => {
+    const untranslated = projects
+      .filter(project => project.onCv && !project.fi)
+      .map(project => project.title)
+    expect(untranslated).toEqual([])
+  })
+
+  it('has the same entries in every CV language', () => {
+    const shape = (entries: { highlights?: string[] }[]) =>
+      entries.map(entry => entry.highlights?.length)
+    for (const cv of cvs) {
+      expect(shape(cv.work)).toEqual(shape(work))
+      expect(shape(cv.education)).toEqual(shape(education))
+      expect(shape(cv.projects)).toEqual(
+        shape(projects.filter(project => project.onCv))
+      )
+    }
   })
 
   it('lists each skill once per project', () => {

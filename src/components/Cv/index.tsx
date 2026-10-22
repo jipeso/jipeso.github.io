@@ -7,10 +7,8 @@ import {
   Typography,
 } from '@mui/material'
 import { cvTheme } from '../../theme'
-import { education, work } from '../../data/experience'
-import { profile, spokenLanguages } from '../../data/profile'
-import { projects } from '../../data/projects'
-import { skillCategories } from '../../data/skills'
+import { type CvContent } from '../../data/cvContent'
+import { profile } from '../../data/profile'
 import { socials } from '../../data/socials'
 import CvSection from './CvSection'
 import CvEntry from './CvEntry'
@@ -24,17 +22,12 @@ const contacts = [
   { label: displayUrl(profile.url), href: profile.url },
 ]
 
-const skillRows = [
-  ...skillCategories.map(([category, skills]) => [category, skills.join(', ')]),
-  ['Spoken languages', spokenLanguages.join(', ')],
-]
-
 const pageStyles = {
   '@page': { size: 'A4', margin: '14mm 16mm' },
   '@media screen': { body: { padding: '32px 16px' } },
 }
 
-const Cv = () => (
+const Cv = ({ cv }: { cv: CvContent }) => (
   <ThemeProvider theme={cvTheme}>
     <CssBaseline />
     <GlobalStyles styles={pageStyles} />
@@ -49,9 +42,9 @@ const Cv = () => (
         }}
       >
         <Typography variant='h1'>{profile.name}</Typography>
-        <Typography color='textSecondary'>{profile.role}</Typography>
+        <Typography color='textSecondary'>{cv.role}</Typography>
         <Typography variant='body2' color='textSecondary' sx={{ mt: 0.5 }}>
-          {profile.location}
+          {cv.location}
           {contacts.map(({ label, href }) => (
             <span key={href}>
               {' · '}
@@ -63,8 +56,8 @@ const Cv = () => (
         </Typography>
       </Box>
 
-      <CvSection title='Experience'>
-        {work.map(entry => (
+      <CvSection title={cv.headings.experience}>
+        {cv.work.map(entry => (
           <CvEntry
             key={entry.title}
             title={`${entry.title}, ${entry.organization}`}
@@ -74,38 +67,36 @@ const Cv = () => (
         ))}
       </CvSection>
 
-      <CvSection title='Projects'>
-        {projects
-          .filter(project => project.onCv)
-          .map(project => {
-            const link = project.production ?? project.repository
-            return (
-              <CvEntry
-                key={project.title}
-                title={project.title}
-                date={String(project.year)}
-                details={
-                  <>
-                    {project.skills.join(', ')}
-                    {link && (
-                      <>
-                        {' · '}
-                        <Link href={link} color='inherit' underline='none'>
-                          {displayUrl(link)}
-                        </Link>
-                      </>
-                    )}
-                  </>
-                }
-                summary={project.description}
-                bullets={project.highlights}
-              />
-            )
-          })}
+      <CvSection title={cv.headings.projects}>
+        {cv.projects.map(project => {
+          const link = project.production ?? project.repository
+          return (
+            <CvEntry
+              key={project.title}
+              title={project.title}
+              date={String(project.year)}
+              details={
+                <>
+                  {project.skills.join(', ')}
+                  {link && (
+                    <>
+                      {' · '}
+                      <Link href={link} color='inherit' underline='none'>
+                        {displayUrl(link)}
+                      </Link>
+                    </>
+                  )}
+                </>
+              }
+              summary={project.description}
+              bullets={project.highlights}
+            />
+          )
+        })}
       </CvSection>
 
-      <CvSection title='Education'>
-        {education.map(entry => (
+      <CvSection title={cv.headings.education}>
+        {cv.education.map(entry => (
           <CvEntry
             key={entry.title}
             title={`${entry.title}, ${entry.organization}`}
@@ -115,8 +106,8 @@ const Cv = () => (
         ))}
       </CvSection>
 
-      <CvSection title='Skills'>
-        {skillRows.map(([label, value]) => (
+      <CvSection title={cv.headings.skills}>
+        {cv.skillRows.map(([label, value]) => (
           <Typography key={label}>
             <Box component='span' sx={{ fontWeight: 600 }}>
               {label}:

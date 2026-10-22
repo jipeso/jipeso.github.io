@@ -31,9 +31,22 @@ export const familiarSkills = [
   'Tailwind',
 ] as const
 
+export type SkillCategory = keyof typeof skillsByCategory
+
+export const skillCategoryNamesFi: Record<SkillCategory, string> = {
+  Languages: 'Ohjelmointikielet',
+  Frontend: 'Frontend',
+  Backend: 'Backend',
+  Databases: 'Tietokannat',
+  'DevOps & Cloud': 'DevOps ja pilvi',
+  'Testing & Tooling': 'Testaus ja työkalut',
+}
+
 export type SkillName =
   | (typeof skillsByCategory)[keyof typeof skillsByCategory][number]
   | (typeof familiarSkills)[number]
 
-export const skillCategories: [string, readonly string[]][] =
-  Object.entries(skillsByCategory)
+export const skillCategories = Object.entries(skillsByCategory) as [
+  SkillCategory,
+  readonly string[],
+][]

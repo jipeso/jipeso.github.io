@@ -5,7 +5,7 @@ import {
   type SxProps,
   type Theme,
 } from '@mui/material'
-import { profile } from '../../data/profile'
+import { cvList } from '../../data/cv'
 import { socials } from '../../data/socials'
 import CopyEmailButton from './CopyEmailButton'
 
@@ -62,9 +62,17 @@ const SocialLinks = () => (
       </IconButton>
     ))}
     <CopyEmailButton sx={iconButtonSx} />
-    <Button href={profile.cv} color='inherit' sx={cvButtonSx}>
-      CV
-    </Button>
+    {cvList.map(({ lang, pdf }) => (
+      <Button
+        key={lang}
+        href={pdf}
+        hrefLang={lang}
+        color='inherit'
+        sx={cvButtonSx}
+      >
+        CV {lang.toUpperCase()}
+      </Button>
+    ))}
   </Stack>
 )
 

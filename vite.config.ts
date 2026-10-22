@@ -3,26 +3,24 @@ import { pathToFileURL } from 'node:url'
 import { chromium, type Page as BrowserPage } from '@playwright/test'
 import { defineConfig } from 'vitest/config'
 import { type HtmlTagDescriptor, type Plugin, type ViteBuilder } from 'vite'
+import { cvList } from './src/data/cv.ts'
 import { profile } from './src/data/profile.ts'
 import { colors } from './src/theme.ts'
 
 const OG_IMAGE = { path: 'og-image.png', width: 1200, height: 630 }
 const SSR_ENTRY = 'src/entry-server.ts'
 const SSR_OUT_DIR = 'node_modules/.tmp/ssr'
-const CV_PAGE = 'cv.html'
-const PAGES = ['index.html', CV_PAGE] as const
+const PAGES = ['index.html', ...cvList.map(cv => cv.page)]
 const PRINT_ORIGIN = 'http://localhost'
 const LATIN_FONT = /-latin-\d+-normal-.+\.woff2$/
 
-type Page = (typeof PAGES)[number]
-
 interface ServerEntry {
-  render: (page: Page) => { html: string; styles: string }
+  render: (page: string) => { html: string; styles: string }
 }
 
 const injectRender = (
   template: string,
-  page: Page,
+  page: string,
   { render }: ServerEntry
 ) => {
   const { html, styles } = render(page)
@@ -67,16 +65,16 @@ const homeMetadata: HtmlTagDescriptor[] = [
   meta({ name: 'twitter:card', content: 'summary_large_image' }),
 ]
 
-const cvMetadata = pageMetadata(
-  `${profile.name} – CV`,
-  profile.url + CV_PAGE,
-  `CV of ${profile.name}, ${profile.role.toLowerCase()} in ${profile.location}.`
+const cvMetadata: Record<string, HtmlTagDescriptor[]> = Object.fromEntries(
+  cvList.map(cv => [
+    `/${cv.page}`,
+    pageMetadata(cv.title, profile.url + cv.page, cv.description),
+  ])
 )
 
 const siteMetadata = (): Plugin => ({
   name: 'site-metadata',
-  transformIndexHtml: (_, { path }) =>
-    path === `/${CV_PAGE}` ? cvMetadata : homeMetadata,
+  transformIndexHtml: (_, { path }) => cvMetadata[path] ?? homeMetadata,
 })
 
 const preloadFonts = (): Plugin => ({
@@ -144,8 +142,10 @@ const prerender = async (builder: ViteBuilder) => {
     const template = await readFile(file, 'utf8')
     await writeFile(file, injectRender(template, page, serverEntry))
   }
-  const pdf = await printPdf(`${PRINT_ORIGIN}/${CV_PAGE}`, serveFrom(outDir))
-  await writeFile(`${outDir}/${profile.cv}`, pdf)
+  for (const cv of cvList) {
+    const pdf = await printPdf(`${PRINT_ORIGIN}/${cv.page}`, serveFrom(outDir))
+    await writeFile(`${outDir}/${cv.pdf}`, pdf)
+  }
 }
 
 const renderOnRequest = (): Plugin => ({
@@ -154,19 +154,21 @@ const renderOnRequest = (): Plugin => ({
   transformIndexHtml: async (template, { server, path }) =>
     injectRender(
       template,
-      path.slice(1) as Page,
+      path.slice(1),
       (await server!.ssrLoadModule(`/${SSR_ENTRY}`)) as ServerEntry
     ),
   configureServer: server => {
-    server.middlewares.use(`/${profile.cv}`, (_, res, next) => {
-      const cvUrl = new URL(CV_PAGE, server.resolvedUrls!.local[0]).href
-      printPdf(cvUrl)
-        .then(pdf => {
-          res.setHeader('Content-Type', 'application/pdf')
-          res.end(pdf)
-        })
-        .catch(next)
-    })
+    for (const cv of cvList) {
+      server.middlewares.use(`/${cv.pdf}`, (_, res, next) => {
+        const cvUrl = new URL(cv.page, server.resolvedUrls!.local[0]).href
+        printPdf(cvUrl)
+          .then(pdf => {
+            res.setHeader('Content-Type', 'application/pdf')
+            res.end(pdf)
+          })
+          .catch(next)
+      })
+    }
   },
   handleHotUpdate: ({ server }) => {
     server.ws.send({ type: 'full-reload' })

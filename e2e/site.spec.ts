@@ -1,5 +1,6 @@
 import AxeBuilder from '@axe-core/playwright'
 import { expect, test, type Response } from '@playwright/test'
+import { cvList } from '../src/data/cv'
 import { profile } from '../src/data/profile'
 import { sectionTitles } from '../src/data/sections'
 import { colors } from '../src/theme'
@@ -161,27 +162,39 @@ test('copies the email address', async ({ page, context }) => {
   await expect(page.getByRole('button', { name: 'Copy email' })).toBeVisible()
 })
 
-test('links to a one-page PDF CV', async ({ page, request }) => {
-  await page.goto('/')
-  const href = await page.getByRole('link', { name: 'CV' }).getAttribute('href')
+for (const cv of cvList) {
+  test(`links to a one-page PDF CV in ${cv.lang}`, async ({
+    page,
+    request,
+  }) => {
+    await page.goto('/')
+    const href = await page
+      .getByRole('link', { name: `CV ${cv.lang}`, exact: false })
+      .getAttribute('href')
 
-  const response = await request.get(href ?? '')
+    const response = await request.get(href ?? '')
 
-  expect(response.headers()['content-type']).toBe('application/pdf')
-  const pdf = (await response.body()).toString('latin1')
-  expect(pdf.match(/\/Type \/Pages\s*\/Count (\d+)/)?.[1]).toBe('1')
-})
+    expect(response.headers()['content-type']).toBe('application/pdf')
+    const pdf = (await response.body()).toString('latin1')
+    expect(pdf.match(/\/Type \/Pages\s*\/Count (\d+)/)?.[1]).toBe('1')
+  })
 
-test('renders the CV from the site content', async ({ page }) => {
-  await page.goto('/cv.html')
+  test(`renders the CV in ${cv.lang} from the site content`, async ({
+    page,
+  }) => {
+    await page.goto(`/${cv.page}`)
 
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText(profile.name)
-  for (const section of ['Experience', 'Projects', 'Education', 'Skills']) {
-    await expect(page.getByRole('heading', { name: section })).toBeVisible()
-  }
-  const { violations } = await new AxeBuilder({ page }).analyze()
-  expect(violations.map(({ id }) => id)).toEqual([])
-})
+    await expect(page.locator('html')).toHaveAttribute('lang', cv.lang)
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(
+      profile.name
+    )
+    for (const section of Object.values(cv.headings)) {
+      await expect(page.getByRole('heading', { name: section })).toBeVisible()
+    }
+    const { violations } = await new AxeBuilder({ page }).analyze()
+    expect(violations.map(({ id }) => id)).toEqual([])
+  })
+}
 
 test('moves between screenshots with the buttons', async ({ page }) => {
   await page.goto('/')

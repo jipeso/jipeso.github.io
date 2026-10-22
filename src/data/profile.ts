@@ -5,15 +5,25 @@ export const profile = {
   email: 'jipesonen@gmail.com',
   url: 'https://jipeso.github.io/',
   repository: 'https://github.com/jipeso/jipeso.github.io',
-  cv: 'joni_pesonen_cv.pdf',
   description:
     "Software developer and Computer Science Master's student at the University of Helsinki. Projects, experience and CV.",
+}
+
+export const profileFi = {
+  role: 'Ohjelmistokehittäjä',
+  location: 'Helsinki',
 }
 
 export const spokenLanguages = [
   'Finnish (native)',
   'English (fluent)',
   'Swedish (satisfactory)',
+]
+
+export const spokenLanguagesFi = [
+  'suomi (äidinkieli)',
+  'englanti (sujuva)',
+  'ruotsi (tyydyttävä)',
 ]
 
 export const about = [
