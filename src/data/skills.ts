@@ -18,6 +18,7 @@ export const skillsByCategory = {
     'Vite',
     'Poetry',
     'Git',
+    'Robot Framework',
   ],
 } as const
 
