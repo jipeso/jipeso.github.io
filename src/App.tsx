@@ -13,9 +13,9 @@ const App = () => (
     <Stack component='main' spacing={6} sx={{ pt: 8, px: 1.5 }}>
       <Profile />
       <About />
-      <Skills />
-      <Experience />
       <Projects />
+      <Experience />
+      <Skills />
     </Stack>
     <Footer />
   </ThemeProvider>

@@ -1,3 +1,7 @@
+import '@fontsource/instrument-sans/400.css'
+import '@fontsource/instrument-sans/600.css'
+import '@fontsource/bricolage-grotesque/700.css'
+
 const COPIED_DURATION_MS = 1500
 
 for (const button of document.querySelectorAll<HTMLElement>('[data-copy]')) {

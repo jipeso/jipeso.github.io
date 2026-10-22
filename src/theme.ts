@@ -7,6 +7,9 @@ export const colors = {
 
 const { light, dark } = colors
 
+const bodyFontFamily = '"Instrument Sans", system-ui, sans-serif'
+const headingFontFamily = '"Bricolage Grotesque", sans-serif'
+
 const focusOutline = (theme: Theme) => ({
   outline: `2px solid ${(theme.vars ?? theme).palette.primary.main}`,
   outlineOffset: 2,
@@ -44,12 +47,13 @@ export const theme = createTheme({
     borderRadius: 8,
   },
   typography: {
-    h1: { fontSize: '2.4rem', fontWeight: 700 },
-    h2: { fontSize: '1.7rem', fontWeight: 650 },
-    h3: { fontSize: '1.2rem', fontWeight: 600 },
+    fontFamily: bodyFontFamily,
+    h1: { fontFamily: headingFontFamily, fontSize: '2.4rem', fontWeight: 700 },
+    h2: { fontFamily: headingFontFamily, fontSize: '1.7rem', fontWeight: 700 },
+    h3: { fontFamily: headingFontFamily, fontSize: '1.2rem', fontWeight: 700 },
     subtitle1: { fontSize: '1.1rem', fontWeight: 600 },
-    overline: { fontWeight: 700 },
-    body2: { fontWeight: 500 },
+    overline: { fontWeight: 600 },
+    button: { fontWeight: 600 },
   },
   components: {
     MuiCssBaseline: {

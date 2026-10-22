@@ -4,7 +4,7 @@ My personal portfolio: <https://jipeso.github.io/>
 
 ![Screenshot](docs/screenshot-dark.png)
 
-- **React at build time only.** The page ships as static HTML and CSS with 0.6 KB of JavaScript.
+- **React at build time only.** The page ships as static HTML and CSS with <1KB of JavaScript.
 - **Content is typed data.** Everything on the page lives in [`src/data/`](src/data), and a misspelled skill name is a type error.
 - **Checked on every push.** Prettier, oxlint with type-checking, Vitest, Playwright + axe and Lighthouse CI. The site deploys only when all of them pass.
 

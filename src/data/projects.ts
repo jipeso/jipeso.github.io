@@ -71,7 +71,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Infoscreen',
-    company: 'University of Helsinki',
+    company: 'University project',
     description:
       "Info screen for the University of Helsinki's Exactum building with an interactive floor plan, real-time room availability, a PDF bulletin board and campus restaurant menus.",
     highlights: [
