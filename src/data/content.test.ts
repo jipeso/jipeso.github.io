@@ -1,8 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { education, work } from './experience'
-import { about } from './profile'
 import { projects } from './projects'
-import { skillCategories } from './skills'
+import { familiarSkills, skillCategories } from './skills'
 import { socials } from './socials'
 
 const duplicates = (values: string[]) =>
@@ -10,14 +9,19 @@ const duplicates = (values: string[]) =>
 
 describe('content', () => {
   it('has unique skill names', () => {
-    const names = skillCategories.flatMap(([, skills]) =>
-      skills.map(skill => skill.name)
-    )
+    const names = [
+      ...skillCategories.flatMap(([, skills]) => skills),
+      ...familiarSkills,
+    ]
     expect(duplicates(names)).toEqual([])
   })
 
   it('has unique project titles', () => {
     expect(duplicates(projects.map(project => project.title))).toEqual([])
+  })
+
+  it('puts projects on the CV', () => {
+    expect(projects.some(project => project.onCv)).toBe(true)
   })
 
   it('lists each skill once per project', () => {
@@ -36,12 +40,5 @@ describe('content', () => {
       ...socials.map(social => social.link),
     ].filter(link => link !== undefined)
     expect(links.filter(link => !link.startsWith('https://'))).toEqual([])
-  })
-
-  it('closes every highlight in the about text', () => {
-    const unclosed = about.filter(
-      paragraph => paragraph.split('**').length % 2 === 0
-    )
-    expect(unclosed).toEqual([])
   })
 })

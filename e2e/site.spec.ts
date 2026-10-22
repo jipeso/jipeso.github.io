@@ -110,6 +110,16 @@ test.describe('without JavaScript', () => {
       toRgb(colors.dark.background)
     )
   })
+
+  test('hides the screenshot buttons', async ({ page }) => {
+    await page.goto('/')
+
+    for (const controls of await page
+      .locator('[data-carousel-controls]')
+      .all()) {
+      await expect(controls).toBeHidden()
+    }
+  })
 })
 
 test('shows a focus outline when navigating by keyboard', async ({ page }) => {
@@ -117,16 +127,17 @@ test('shows a focus outline when navigating by keyboard', async ({ page }) => {
 
   await page.keyboard.press('Tab')
 
-  await expect(page.getByRole('link', { name: 'GitHub' })).toBeFocused()
-  await expect(page.getByRole('link', { name: 'GitHub' })).toHaveCSS(
-    'outline-style',
-    'solid'
-  )
+  await expect(
+    page.getByRole('link', { name: 'GitHub', exact: true })
+  ).toBeFocused()
+  await expect(
+    page.getByRole('link', { name: 'GitHub', exact: true })
+  ).toHaveCSS('outline-style', 'solid')
 })
 
 test('shows a tooltip when hovering a social link', async ({ page }) => {
   await page.goto('/')
-  const github = page.getByRole('link', { name: 'GitHub' })
+  const github = page.getByRole('link', { name: 'GitHub', exact: true })
 
   await github.hover()
 
@@ -148,4 +159,48 @@ test('copies the email address', async ({ page, context }) => {
     profile.email
   )
   await expect(page.getByRole('button', { name: 'Copy email' })).toBeVisible()
+})
+
+test('links to a one-page PDF CV', async ({ page, request }) => {
+  await page.goto('/')
+  const href = await page.getByRole('link', { name: 'CV' }).getAttribute('href')
+
+  const response = await request.get(href ?? '')
+
+  expect(response.headers()['content-type']).toBe('application/pdf')
+  const pdf = (await response.body()).toString('latin1')
+  expect(pdf.match(/\/Type \/Pages\s*\/Count (\d+)/)?.[1]).toBe('1')
+})
+
+test('renders the CV from the site content', async ({ page }) => {
+  await page.goto('/cv.html')
+
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(profile.name)
+  for (const section of ['Experience', 'Projects', 'Education', 'Skills']) {
+    await expect(page.getByRole('heading', { name: section })).toBeVisible()
+  }
+  const { violations } = await new AxeBuilder({ page }).analyze()
+  expect(violations.map(({ id }) => id)).toEqual([])
+})
+
+test('moves between screenshots with the buttons', async ({ page }) => {
+  await page.goto('/')
+  const carousel = page.locator('[data-carousel]').first()
+  const previous = carousel.getByRole('button', { name: 'Previous screenshot' })
+  const next = carousel.getByRole('button', { name: 'Next screenshot' })
+  const status = carousel.getByRole('status')
+  const count = await carousel.getByRole('figure').count()
+
+  await expect(status).toHaveText(`1 / ${count}`)
+  await expect(previous).toBeDisabled()
+
+  for (let index = 2; index <= count; index++) {
+    await next.click()
+    await expect(status).toHaveText(`${index} / ${count}`)
+  }
+  await expect(next).toBeDisabled()
+
+  await previous.click()
+
+  await expect(status).toHaveText(`${count - 1} / ${count}`)
 })

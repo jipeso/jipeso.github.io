@@ -1,8 +1,7 @@
-import { Card, CardMedia, Box, Typography, Button } from '@mui/material'
+import { Card, Box, Typography, Button } from '@mui/material'
 import { type Project } from '../../data/projects'
-import { skillsByName } from '../../data/skills'
-import SkillItem from '../Skills/SkillItem'
 import BulletList from '../BulletList'
+import Screenshots from './Screenshots'
 
 interface ProjectCardProps {
   project: Project
@@ -15,8 +14,8 @@ interface ExternalLink {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const links = [
-    { label: 'View Production', href: project.production },
-    { label: 'View Repository', href: project.repository },
+    { label: 'Live site', href: project.production },
+    { label: 'Source code', href: project.repository },
   ].filter((link): link is ExternalLink => link.href !== undefined)
 
   return (
@@ -37,20 +36,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </Typography>
         )}
       </Box>
-      <CardMedia
-        component='img'
-        image={project.image}
-        alt={`Screenshot of ${project.title}`}
-        loading='lazy'
-        decoding='async'
-        sx={{
-          aspectRatio: '16 / 9',
-          borderRadius: 1,
-          border: '1px solid',
-          borderColor: 'divider',
-          mb: 2,
-        }}
-      />
+      <Screenshots title={project.title} screenshots={project.screenshots} />
       <Typography color='textSecondary'>{project.description}</Typography>
       {project.highlights && <BulletList items={project.highlights} />}
       <Box
@@ -59,25 +45,14 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           pt: 2,
           display: 'flex',
           flexDirection: { xs: 'column', sm: 'row' },
-          alignItems: { xs: 'flex-start', sm: 'flex-end' },
+          alignItems: { xs: 'flex-start', sm: 'center' },
           justifyContent: 'space-between',
           gap: 2,
         }}
       >
-        <Box>
-          <Typography
-            variant='caption'
-            color='textSecondary'
-            sx={{ mb: 1, display: 'block' }}
-          >
-            Key technologies:
-          </Typography>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-            {project.skills.map(name => (
-              <SkillItem key={name} skill={skillsByName[name]} />
-            ))}
-          </Box>
-        </Box>
+        <Typography variant='body2' color='textSecondary'>
+          {project.skills.join(' · ')}
+        </Typography>
 
         {links.length > 0 && (
           <Box sx={{ display: 'flex', gap: 1, flexShrink: 0 }}>

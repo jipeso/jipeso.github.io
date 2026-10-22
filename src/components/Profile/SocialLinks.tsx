@@ -1,12 +1,22 @@
-import { Stack, IconButton, type SxProps, type Theme } from '@mui/material'
+import {
+  Button,
+  Stack,
+  IconButton,
+  type SxProps,
+  type Theme,
+} from '@mui/material'
+import { profile } from '../../data/profile'
 import { socials } from '../../data/socials'
 import CopyEmailButton from './CopyEmailButton'
 
-const iconButtonSx: SxProps<Theme> = theme => ({
+const outlinedSx: SxProps<Theme> = theme => ({
   border: '1px solid',
   borderColor: 'divider',
   transition: theme.transitions.create(['color', 'background-color']),
   '&:hover': { color: 'primary.main' },
+})
+
+const tooltipSx: SxProps<Theme> = theme => ({
   '&::after': {
     content: 'attr(aria-label)',
     position: 'absolute',
@@ -30,6 +40,13 @@ const iconButtonSx: SxProps<Theme> = theme => ({
   '&:focus-visible::after': { opacity: 1 },
 })
 
+const iconButtonSx: SxProps<Theme> = [outlinedSx, tooltipSx]
+
+const cvButtonSx: SxProps<Theme> = [
+  outlinedSx,
+  { height: 40, minWidth: 0, px: 2, borderRadius: 5 },
+]
+
 const SocialLinks = () => (
   <Stack direction='row' spacing={1.5} sx={{ pt: 2 }}>
     {socials.map(({ title, link, Icon }) => (
@@ -45,6 +62,9 @@ const SocialLinks = () => (
       </IconButton>
     ))}
     <CopyEmailButton sx={iconButtonSx} />
+    <Button href={profile.cv} color='inherit' sx={cvButtonSx}>
+      CV
+    </Button>
   </Stack>
 )
 

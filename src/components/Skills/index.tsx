@@ -1,38 +1,39 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import { familiarSkills, skillCategories } from '../../data/skills'
 import Section from '../Section'
-import CategoryCard from './CategoryCard'
-import SkillItem from './SkillItem'
 
-const primaryCategories = skillCategories
-  .map(([title, skills]) => ({
-    title,
-    skills: skills.filter(skill => !skill.familiar),
-  }))
-  .filter(category => category.skills.length > 0)
+const rows: [string, readonly string[]][] = [
+  ...skillCategories,
+  ['Also familiar with', familiarSkills],
+]
 
 const Skills = () => (
   <Section id='skills'>
-    <Grid container spacing={3}>
-      {primaryCategories.map(({ title, skills }) => (
-        <Grid size={{ xs: 12, sm: 6 }} key={title}>
-          <CategoryCard title={title} skills={skills} />
-        </Grid>
-      ))}
-    </Grid>
-
-    {familiarSkills.length > 0 && (
-      <Box sx={{ mt: 3 }}>
-        <Typography variant='subtitle1' color='textSecondary' sx={{ mb: 1 }}>
-          Also familiar with
-        </Typography>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-          {familiarSkills.map(skill => (
-            <SkillItem key={skill.name} skill={skill} muted />
-          ))}
+    <Box
+      component='dl'
+      sx={{
+        m: 0,
+        display: 'grid',
+        gridTemplateColumns: { xs: '1fr', sm: 'max-content 1fr' },
+        columnGap: 4,
+        rowGap: { xs: 0.5, sm: 1.5 },
+      }}
+    >
+      {rows.map(([category, skills]) => (
+        <Box key={category} sx={{ display: 'contents' }}>
+          <Typography
+            component='dt'
+            color='textSecondary'
+            sx={{ mt: { xs: 1.5, sm: 0 } }}
+          >
+            {category}
+          </Typography>
+          <Typography component='dd' sx={{ m: 0 }}>
+            {skills.join(', ')}
+          </Typography>
         </Box>
-      </Box>
-    )}
+      ))}
+    </Box>
   </Section>
 )
 

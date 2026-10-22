@@ -7,8 +7,17 @@ export const colors = {
 
 const { light, dark } = colors
 
-const bodyFontFamily = '"Instrument Sans", system-ui, sans-serif'
-const headingFontFamily = '"Bricolage Grotesque", sans-serif'
+const fontFamily = '"Schibsted Grotesk", system-ui, sans-serif'
+
+const lightPalette = {
+  primary: { main: light.primary },
+  background: { default: light.background, paper: '#FFFFFF' },
+  text: { primary: light.text, secondary: '#78716C' },
+  action: {
+    hover: alpha(light.primary, 0.05),
+    selected: alpha(light.primary, 0.1),
+  },
+}
 
 const focusOutline = (theme: Theme) => ({
   outline: `2px solid ${(theme.vars ?? theme).palette.primary.main}`,
@@ -20,15 +29,7 @@ export const theme = createTheme({
   defaultColorScheme: 'dark',
   colorSchemes: {
     light: {
-      palette: {
-        primary: { main: light.primary },
-        background: { default: light.background, paper: '#FFFFFF' },
-        text: { primary: light.text, secondary: '#78716C' },
-        action: {
-          hover: alpha(light.primary, 0.05),
-          selected: alpha(light.primary, 0.1),
-        },
-      },
+      palette: lightPalette,
     },
     dark: {
       palette: {
@@ -47,13 +48,13 @@ export const theme = createTheme({
     borderRadius: 8,
   },
   typography: {
-    fontFamily: bodyFontFamily,
-    h1: { fontFamily: headingFontFamily, fontSize: '2.4rem', fontWeight: 700 },
-    h2: { fontFamily: headingFontFamily, fontSize: '1.7rem', fontWeight: 700 },
-    h3: { fontFamily: headingFontFamily, fontSize: '1.2rem', fontWeight: 700 },
+    fontFamily,
+    h1: { fontSize: '2.4rem', fontWeight: 700 },
+    h2: { fontSize: '1.7rem', fontWeight: 700 },
+    h3: { fontSize: '1.2rem', fontWeight: 700 },
     subtitle1: { fontSize: '1.1rem', fontWeight: 600 },
     overline: { fontWeight: 600 },
-    button: { fontWeight: 600 },
+    button: { fontWeight: 600, textTransform: 'none' },
   },
   components: {
     MuiCssBaseline: {
@@ -78,5 +79,25 @@ export const theme = createTheme({
         variantMapping: { subtitle1: 'p', subtitle2: 'p' },
       },
     },
+  },
+})
+
+export const cvTheme = createTheme({
+  palette: {
+    ...lightPalette,
+    background: { default: '#FFFFFF', paper: '#FFFFFF' },
+  },
+  typography: {
+    fontFamily,
+    fontSize: 12.5,
+    h1: { fontSize: '1.75rem', fontWeight: 700 },
+    h2: {
+      fontSize: '1.05rem',
+      fontWeight: 700,
+      color: light.primary,
+    },
+    h3: { fontSize: '0.95rem', fontWeight: 600 },
+    body1: { lineHeight: 1.4 },
+    body2: { lineHeight: 1.4 },
   },
 })

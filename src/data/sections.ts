@@ -1,8 +1,8 @@
 export const sectionTitles = {
-  about: 'About me',
+  about: 'About',
   skills: 'Skills',
   experience: 'Experience',
-  projects: 'Featured projects',
+  projects: 'Projects',
 }
 
 export type SectionId = keyof typeof sectionTitles

@@ -1,102 +1,130 @@
 import newsArticlesImage from '../assets/articles-project.webp'
 import infoScreenImage from '../assets/infoscreen-project.webp'
 import bibtexProjectImage from '../assets/bibtex-project.webp'
-import itArkkitehtuuriImage from '../assets/it-arkkitehtuuri-project.webp'
-import duunitImage from '../assets/duunit-project.webp'
+import itArkkitehtuuriTableImage from '../assets/it-arkkitehtuuri-table-view.webp'
+import itArkkitehtuuriDiagramImage from '../assets/it-arkkitehtuuri-diagram-builder.webp'
+import duunitOverviewImage from '../assets/duunit-overview.webp'
+import duunitApplicationsImage from '../assets/duunit-applications.webp'
+import duunitJobAnalysisImage from '../assets/duunit-job-analysis.webp'
+import duunitResumeViewerImage from '../assets/duunit-resume-viewer.webp'
+import duunitSettingsImage from '../assets/duunit-settings.webp'
+import duunitProfileImage from '../assets/duunit-profile.webp'
 import { type SkillName } from './skills'
+
+export interface Screenshot {
+  src: string
+  caption?: string
+}
 
 export interface Project {
   title: string
   company?: string
+  year: number
+  onCv?: boolean
   description: string
   highlights?: string[]
   production?: string
   repository?: string
-  image: string
+  screenshots: Screenshot[]
   skills: SkillName[]
 }
 
 export const projects: Project[] = [
   {
     title: 'Duunit',
+    year: 2026,
+    onCv: true,
     company: 'University project',
     description:
-      'Job application tracker with a statistics dashboard and AI-powered job description analysis.',
+      'Job application tracker for keeping track of applications, interviews and deadlines, with statistics on your job search. One feature uses AI to fill in the application form from a pasted job description.',
     highlights: [
-      'Designed and developed solo for Full Stack -web development project',
-      'AI job description analysis using the OpenRouter API',
+      'Built solo for my own job search, as the project for the Full Stack Open course (10 credits)',
+      "AI output is forced into a JSON schema generated from the app's shared Zod types, and the job description is treated strictly as data to guard against prompt injection",
       'Automated release pipeline with end-to-end tests',
     ],
     repository: 'https://github.com/jipeso/duunit',
-    image: duunitImage,
+    screenshots: [
+      {
+        src: duunitOverviewImage,
+        caption: 'Upcoming deadlines, interviews and sent applications',
+      },
+      { src: duunitApplicationsImage, caption: 'Applications' },
+      { src: duunitJobAnalysisImage, caption: 'AI job description analysis' },
+      { src: duunitResumeViewerImage, caption: 'Resume viewer' },
+      {
+        src: duunitSettingsImage,
+        caption: 'Finnish, English or Swedish, light or dark',
+      },
+      {
+        src: duunitProfileImage,
+        caption: 'Profile with data export and account deletion',
+      },
+    ],
     production: 'https://duunit.site',
     skills: [
       'TypeScript',
-      'Docker',
-      'Node.js',
       'React',
-      'Material UI',
       'Express',
       'PostgreSQL',
+      'Docker',
       'AWS',
-      'Vite',
-      'GitHub Actions',
       'Playwright',
     ],
   },
   {
     title: 'IT-Arkkitehtuuri',
+    year: 2026,
     company: '2M-IT Oy',
     description:
-      'Tool for viewing and managing IT architecture data synchronized from ServiceNow.',
+      'Customer tool for searching and browsing IT architecture data synchronized from the ServiceNow REST API: thousands of systems and the relationships between them.',
     highlights: [
-      'Designed and developed solo',
-      'Interactive data grids, report generation and a diagram builder that visualizes relationships automatically',
+      'Built solo during my internship, from architecture to deployment',
+      'Diagram builder: from any system, draw everything related to it based on the relationship data',
+      'Interactive data grids and report generation',
     ],
-    image: itArkkitehtuuriImage,
+    screenshots: [
+      { src: itArkkitehtuuriDiagramImage, caption: 'Diagram builder' },
+      {
+        src: itArkkitehtuuriTableImage,
+        caption: 'Data synced from ServiceNow',
+      },
+    ],
     skills: [
       'TypeScript',
-      'Docker',
-      'Node.js',
       'React',
-      'Material UI',
       'Express',
       'PostgreSQL',
+      'Docker',
       'NGINX',
       'Azure',
-      'Vite',
-      'GitHub Actions',
-      'Vitest',
     ],
   },
   {
     title: 'Infoscreen',
+    year: 2025,
+    onCv: true,
     company: 'University project',
     description:
       "Info screen for the University of Helsinki's Exactum building with an interactive floor plan, real-time room availability, a PDF bulletin board and campus restaurant menus.",
     highlights: [
       'Built in a team of six',
-      'Contributed to the production deployment, floor plan, backend and Microsoft Graph API integration for room availability',
+      "Integrated the Microsoft Graph API for real-time room availability and updated the SVG floor plan to show each room's status",
+      'Also worked on the backend and the production deployment',
     ],
     repository: 'https://github.com/Infopisteprojekti/infopiste',
-    image: infoScreenImage,
+    screenshots: [{ src: infoScreenImage }],
     skills: [
       'JavaScript',
-      'Docker',
-      'Node.js',
       'React',
       'Express',
       'MongoDB',
-      'Kubernetes',
       'Redis',
-      'Vite',
-      'GitHub Actions',
-      'Playwright',
-      'Vitest',
+      'Kubernetes',
     ],
   },
   {
     title: 'News article manager',
+    year: 2025,
     company: 'University project',
     description:
       'Application for saving and managing news articles from RSS feeds.',
@@ -105,11 +133,12 @@ export const projects: Project[] = [
       'Automated tests and CI with coverage reporting',
     ],
     repository: 'https://github.com/jipeso/ohjelmistotekniikka',
-    image: newsArticlesImage,
-    skills: ['Python', 'Flask', 'Poetry', 'SQLite', 'Pytest', 'GitHub Actions'],
+    screenshots: [{ src: newsArticlesImage }],
+    skills: ['Python', 'Flask', 'SQLite', 'Pytest'],
   },
   {
     title: 'BibTeX reference manager',
+    year: 2024,
     company: 'University project',
     description:
       'Application for creating and managing BibTeX references for academic writing.',
@@ -119,14 +148,7 @@ export const projects: Project[] = [
       'Automated tests and CI with coverage reporting',
     ],
     repository: 'https://github.com/ruokokoski/ohtu-miniprojekti',
-    image: bibtexProjectImage,
-    skills: [
-      'Python',
-      'Flask',
-      'Poetry',
-      'PostgreSQL',
-      'Pytest',
-      'GitHub Actions',
-    ],
+    screenshots: [{ src: bibtexProjectImage }],
+    skills: ['Python', 'Flask', 'PostgreSQL', 'Pytest'],
   },
 ]
